@@ -89,8 +89,10 @@
     <Content Include="app\layout\main.controller.js" />
     <Content Include="app\layout\topbar.html" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
+    <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="img\Krunk.jpg" />
     <Content Include="index.html" />
     <Content Include="scripts\angular\angular-animate.js" />
     <Content Include="scripts\angular\angular-touch.js" />
