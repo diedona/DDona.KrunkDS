@@ -121,6 +121,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.run.js" />
+    <Content Include="app\app.settings.js" />
     <Content Include="app\help\help.controller.js" />
     <Content Include="app\help\help.html" />
     <Content Include="app\home\home.controller.js" />
@@ -130,6 +132,7 @@
     <Content Include="app\layout\topbar.html" />
     <Content Include="app\login\login.controller.js" />
     <Content Include="app\login\login.html" />
+    <Content Include="app\services\login.service.js" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />
@@ -137,6 +140,7 @@
     <Content Include="img\Krunk.jpg" />
     <Content Include="index.html" />
     <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-local-storage.js" />
     <Content Include="scripts\angular\angular-touch.js" />
     <Content Include="scripts\angular\angular-ui-bootstrap-tpls-2.2.0.js" />
     <Content Include="scripts\angular\angular-ui-router.js" />
@@ -168,7 +172,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\services\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
   </ItemGroup>

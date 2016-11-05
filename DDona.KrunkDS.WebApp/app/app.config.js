@@ -4,10 +4,12 @@
         .module('app')
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider'];
 
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
         
+        localStorageServiceProvider.setPrefix('krunkDS');
+
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider

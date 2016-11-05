@@ -4,9 +4,9 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = [];
+    LoginController.$inject = ['$location', 'LoginService'];
 
-    function LoginController() {
+    function LoginController($location, LoginService) {
         var vm = this;
         vm.working = false;
         vm.user = {};
@@ -26,7 +26,11 @@
         //////////////////////////////////////////////////////////////////////////
 
         function submitForm() {
-            console.log(vm.user);
+            LoginService.login(vm.user).then(function (response) {
+                $location.path('/home');
+            }, function (err) {
+                console.log(err);
+            });
         }
     }
 
