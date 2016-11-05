@@ -4,13 +4,14 @@
         .module('app')
         .controller('MainController', MainController);
 
-    MainController.$inject = [];
+    MainController.$inject = ['LoginService'];
 
-    function MainController() {
+    function MainController(LoginService) {
         var vm = this;
         vm.working = false;
         vm.HeaderText = "App Abstract";
         vm.FooterText = "App Abstract Footer";
+        vm.UserName = LoginService.getAuthentication().UserName;
 
         //////////////////////////////////////////////////////////////////////////
 

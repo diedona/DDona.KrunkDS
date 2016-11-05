@@ -16,6 +16,7 @@
         var authentication = defaultAuth;
 
         var service = {
+            getAuthentication: getAuthentication,
             login: login,
             logout: logout,
             fillAuthData: fillAuthData
@@ -24,6 +25,10 @@
         return service;
 
         //////////////////////////////////////////////////////////////////////////
+
+        function getAuthentication() {
+            return authentication;
+        }
 
         function login(obj) {
             var data = "grant_type=password&username=" + obj.UserName + "&password=" + obj.Password;
