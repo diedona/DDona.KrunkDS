@@ -4,9 +4,9 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'LoginService', 'NotificationService'];
+    LoginController.$inject = ['$location', 'LoginService', 'NotificationService', '$scope', 'AuthHelper'];
 
-    function LoginController($location, LoginService, NotificationService) {
+    function LoginController($location, LoginService, NotificationService, $scope, AuthHelper) {
         var vm = this;
         vm.working = false;
         vm.user = {};
@@ -28,6 +28,8 @@
         function submitForm() {
             LoginService.login(vm.user).then(function (response) {
                 $location.path('/home');
+                //updates auth in main
+                $scope.mainCtrl.authentication = AuthHelper.getAuthentication();
             }, function (err) {
                 NotificationService.error('Ops...', 'Login inválido');
             });

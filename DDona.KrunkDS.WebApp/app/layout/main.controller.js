@@ -4,14 +4,14 @@
         .module('app')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['LoginService'];
+    MainController.$inject = ['AuthHelper'];
 
-    function MainController(LoginService) {
+    function MainController(AuthHelper) {
         var vm = this;
         vm.working = false;
         vm.HeaderText = "App Abstract";
         vm.FooterText = "App Abstract Footer";
-        vm.UserName = LoginService.getAuthentication().UserName;
+        vm.authentication = {};
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -20,7 +20,7 @@
         //////////////////////////////////////////////////////////////////////////
 
         function activate() {
-
+            vm.authentication = AuthHelper.getAuthentication();
         }
 
         //////////////////////////////////////////////////////////////////////////
