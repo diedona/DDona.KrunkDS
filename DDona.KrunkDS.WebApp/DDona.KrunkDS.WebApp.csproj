@@ -125,6 +125,7 @@
     <Content Include="app\app.settings.js" />
     <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\helpers\interceptor-helper.service.js" />
+    <Content Include="app\layout\loader.tpl.html" />
     <Content Include="app\pages\help\help.controller.js" />
     <Content Include="app\pages\help\help.html" />
     <Content Include="app\pages\home\home.controller.js" />
@@ -147,11 +148,15 @@
     <Content Include="css\sweetalert\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="img\background\diamond.png" />
     <Content Include="img\background\weather.png" />
     <Content Include="img\Help.jpg" />
     <Content Include="img\Krunk.jpg" />
+    <Content Include="img\loading\squares.gif" />
+    <Content Include="img\loading\squares.svg" />
     <Content Include="index.html" />
     <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-http-loader.js" />
     <Content Include="scripts\angular\angular-local-storage.js" />
     <Content Include="scripts\angular\angular-sweetalert.js" />
     <Content Include="scripts\angular\angular-touch.js" />

@@ -12,6 +12,8 @@
 </head>
 <body ng-controller="MainController as mainCtrl">
 
+    <div ng-http-loader template="app/layout/loader.tpl.html"></div>
+
     <div ui-view></div>
 
     <!-- SCRIPTS GENERAL -->
@@ -28,6 +30,7 @@
     <script src="scripts/angular/angular-validator.js"></script>
     <script src="scripts/angular/angular-local-storage.js"></script>
     <script src="scripts/angular/angular-sweetalert.js"></script>
+    <script src="scripts/angular/angular-http-loader.js"></script>
 
     <!-- APPS -->
     <script src="app/app.js"></script>

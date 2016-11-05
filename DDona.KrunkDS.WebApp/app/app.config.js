@@ -5,13 +5,16 @@
         .config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider',
-        '$httpProvider'];
+        '$httpProvider', 'httpMethodInterceptorProvider'];
 
     function config($stateProvider, $urlRouterProvider, localStorageServiceProvider,
-        $httpProvider) {
+        $httpProvider, httpMethodInterceptorProvider) {
         
         localStorageServiceProvider.setPrefix('krunkDS');
         $httpProvider.interceptors.push('InterceptorHelper');
+
+        httpMethodInterceptorProvider.whitelistDomain('http://localhost:49972/');
+        httpMethodInterceptorProvider.whitelistDomain('krunkds');
 
         $urlRouterProvider.otherwise('/home');
 
