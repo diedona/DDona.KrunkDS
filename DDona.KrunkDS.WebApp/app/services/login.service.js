@@ -4,9 +4,9 @@
         .module('app')
         .factory('LoginService', LoginService);
 
-    LoginService.$inject = ['$http', '$q', 'localStorageService', 'SettingsHelper', 'AuthHelper'];
+    LoginService.$inject = ['$http', '$q', 'SettingsHelper', 'AuthHelper'];
 
-    function LoginService($http, $q, localStorageService, SettingsHelper, AuthHelper) {
+    function LoginService($http, $q, SettingsHelper, AuthHelper) {
         var defaultAuth = {
             UserName: "",
             Token: "",
@@ -16,7 +16,6 @@
         var authentication = defaultAuth;
 
         var service = {
-            getAuthentication: getAuthentication,
             login: login,
             logout: logout,
             fillAuthData: fillAuthData
@@ -25,10 +24,6 @@
         return service;
 
         //////////////////////////////////////////////////////////////////////////
-
-        function getAuthentication() {
-            return authentication;
-        }
 
         function login(obj) {
             var data = "grant_type=password&username=" + obj.UserName + "&password=" + obj.Password;
@@ -43,7 +38,7 @@
                         IsAuth: true
                     };
 
-                    localStorageService.set('authorizationData', authentication);
+                    AuthHelper.setAuthentication(authentication);
 
                     deferred.resolve(response);
 
@@ -56,12 +51,12 @@
         }
 
         function logout() {
-            localStorageService.remove('authorizationData');
+            AuthHelper.cleanAuthentication();
             authentication = defaultAuth;
         }
 
         function fillAuthData() {
-            var authData = localStorageService.get('authorizationData');
+            var authData = AuthHelper.getAuthentication();
             if (authData) {
                 authentication = authData;
             }

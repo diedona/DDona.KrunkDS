@@ -4,11 +4,14 @@
         .module('app')
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider',
+        '$httpProvider'];
 
-    function config($stateProvider, $urlRouterProvider, localStorageServiceProvider) {
+    function config($stateProvider, $urlRouterProvider, localStorageServiceProvider,
+        $httpProvider) {
         
         localStorageServiceProvider.setPrefix('krunkDS');
+        $httpProvider.interceptors.push('InterceptorHelper');
 
         $urlRouterProvider.otherwise('/home');
 
@@ -22,29 +25,31 @@
         })
         .state('login', {
             url: '/login',
-            templateUrl: 'app/login/login.html',
+            templateUrl: 'app/pages/login/login.html',
             controller: 'LoginController as loginCtrl',
-            resolve: {
-
-            }
+        })
+        .state('app.logout', {
+            url: '/logout',
+            controller: 'LogOutController as logOutCtrl'
         })
         .state('app.home', {
             url: '/home',
-            templateUrl: 'app/home/home.html',
+            templateUrl: 'app/pages/home/home.html',
             controller: 'HomeController as homeCtrl'
         })
         .state('app.help', {
             url: '/help',
-            templateUrl: 'app/help/help.html',
+            templateUrl: 'app/pages/help/help.html',
             controller: 'HelpController as helpCtrl'
         });
 
-        function isLoggedIn($q, $timeout, $state, LoginService) {
+        function isLoggedIn($q, $timeout, $state, AuthHelper) {
             var deferred = $q.defer();
 
             // $timeout is an example; it also can be an xhr request or any other async function
             $timeout(function () {
-                if (!LoginService.getAuthentication().IsAuth) {
+                var authentication = AuthHelper.getAuthentication();
+                if (authentication === null || (!authentication.IsAuth)) {
                     // user is not logged, do not proceed
                     // instead, go to a different page
                     $state.go('login');
