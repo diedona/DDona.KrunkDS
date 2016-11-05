@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.WebApp", "DDona.KrunkDS.WebApp\DDona.KrunkDS.WebApp.csproj", "{F8359C59-C606-4FB3-81DF-4C2E8F1CCCC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.Data", "DDona.KrunkDS.Data\DDona.KrunkDS.Data.csproj", "{FE7055E8-7A8D-4031-9587-BB1519356D89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.ViewModel", "DDona.KrunkDS.ViewModel\DDona.KrunkDS.ViewModel.csproj", "{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F8359C59-C606-4FB3-81DF-4C2E8F1CCCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8359C59-C606-4FB3-81DF-4C2E8F1CCCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8359C59-C606-4FB3-81DF-4C2E8F1CCCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7055E8-7A8D-4031-9587-BB1519356D89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7055E8-7A8D-4031-9587-BB1519356D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7055E8-7A8D-4031-9587-BB1519356D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7055E8-7A8D-4031-9587-BB1519356D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
