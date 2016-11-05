@@ -150,6 +150,8 @@
     <Content Include="app\app.config.js" />
     <Content Include="app\app.core.js" />
     <Content Include="app\app.js" />
+    <Content Include="scripts\bootstrap\bootstrap.js" />
+    <Content Include="scripts\jquery\jquery-3.1.1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
