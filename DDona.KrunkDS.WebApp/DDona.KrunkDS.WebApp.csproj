@@ -104,6 +104,8 @@
     <Content Include="app\layout\layout.html" />
     <Content Include="app\layout\main.controller.js" />
     <Content Include="app\layout\topbar.html" />
+    <Content Include="app\login\login.controller.js" />
+    <Content Include="app\login\login.html" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />

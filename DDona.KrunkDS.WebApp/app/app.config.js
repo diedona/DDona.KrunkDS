@@ -15,6 +15,11 @@
             abstract: true,
             templateUrl: 'app/layout/layout.html'
         })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginController as loginCtrl'
+        })
         .state('app.home', {
             url: '/home',
             templateUrl: 'app/home/home.html',
