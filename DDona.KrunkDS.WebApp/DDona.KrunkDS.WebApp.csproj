@@ -133,6 +133,7 @@
     <Content Include="app\login\login.controller.js" />
     <Content Include="app\login\login.html" />
     <Content Include="app\services\login.service.js" />
+    <Content Include="css\animate\animate.css" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />

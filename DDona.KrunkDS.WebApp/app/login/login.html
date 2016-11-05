@@ -1,55 +1,59 @@
-﻿<div class="container">
-    <div class="row">
-        <div class="col-md-offset-4 col-md-4 col-md-offset-4">
-            <div class="panel panel-default margin-top">
-                <div class="panel-body">
+﻿<div class="animated fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+                <div class="panel panel-default margin-top">
+                    <div class="panel-body">
 
-                    <form novalidate angular-validator angular-validator-submit='loginCtrl.submitForm()' name='loginForm'>
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <h3>Você é digno?</h3>
+                        <form novalidate angular-validator angular-validator-submit='loginCtrl.submitForm()' name='loginForm'>
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <h3>Você é digno?</h3>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-xs-12 form-group">
-                                <label class="control-label">Nome de Usuário:</label>
-                                <input type="text"
-                                       name="UserName"
-                                       class="form-control"
-                                       required
-                                       ng-model="loginCtrl.user.UserName" />
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label class="control-label">Nome de Usuário:</label>
+                                    <input type="text"
+                                           name="UserName"
+                                           class="form-control"
+                                           required
+                                           ng-model="loginCtrl.user.UserName" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-xs-12 form-group">
-                                <label class="control-label">Senha:</label>
-                                <input type="password"
-                                       name="Password"
-                                       class="form-control"
-                                       ng-required="true"
-                                       ng-model="loginCtrl.user.Password" />
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <label class="control-label">Senha:</label>
+                                    <input type="password"
+                                           name="Password"
+                                           class="form-control"
+                                           ng-required="true"
+                                           ng-model="loginCtrl.user.Password" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-xs-12 form-group">
-                                <button type="submit"
-                                        class="btn btn-primary form-control">
-                                    <i class="fa fa-arrow-circle-right"></i> Vai logo
-                                </button>
+                            <div class="row">
+                                <div class="col-xs-12 form-group">
+                                    <button type="submit"
+                                            class="btn btn-primary form-control">
+                                        <i class="fa fa-arrow-circle-right"></i> Vai logo
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-offset-4 col-md-4 col-md-offset-4">
-            <div class="well">Krunk DS</div>
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+                <div class="well text-center">
+                    <strong>Krunk</strong> DS
+                </div>
+            </div>
         </div>
     </div>
 </div>
