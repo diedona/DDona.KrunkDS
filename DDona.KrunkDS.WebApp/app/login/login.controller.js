@@ -9,6 +9,9 @@
     function LoginController() {
         var vm = this;
         vm.working = false;
+        vm.user = {};
+
+        vm.submitForm = submitForm;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -22,7 +25,9 @@
 
         //////////////////////////////////////////////////////////////////////////
 
-
+        function submitForm() {
+            console.log(vm.user);
+        }
     }
 
 }());

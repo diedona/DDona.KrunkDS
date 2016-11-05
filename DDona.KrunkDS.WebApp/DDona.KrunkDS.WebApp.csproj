@@ -116,6 +116,7 @@
     <Content Include="scripts\angular\angular-touch.js" />
     <Content Include="scripts\angular\angular-ui-bootstrap-tpls-2.2.0.js" />
     <Content Include="scripts\angular\angular-ui-router.js" />
+    <Content Include="scripts\angular\angular-validator.js" />
     <Content Include="scripts\angular\angular.js" />
     <Content Include="app\app.config.js" />
     <Content Include="app\app.core.js" />
