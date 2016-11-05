@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="app\app.run.js" />
     <Content Include="app\app.settings.js" />
+    <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\help\help.controller.js" />
     <Content Include="app\help\help.html" />
     <Content Include="app\home\home.controller.js" />

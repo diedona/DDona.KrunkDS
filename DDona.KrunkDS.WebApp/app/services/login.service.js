@@ -4,9 +4,9 @@
         .module('app')
         .factory('LoginService', LoginService);
 
-    LoginService.$inject = ['$http', '$q', 'localStorageService', 'SettingsHelper'];
+    LoginService.$inject = ['$http', '$q', 'localStorageService', 'SettingsHelper', 'AuthHelper'];
 
-    function LoginService($http, $q, localStorageService, SettingsHelper) {
+    function LoginService($http, $q, localStorageService, SettingsHelper, AuthHelper) {
         var defaultAuth = {
             UserName: "",
             Token: "",
