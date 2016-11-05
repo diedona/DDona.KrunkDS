@@ -8,6 +8,7 @@
             'ui.router',
             'ui.bootstrap',
             'angularValidator',
-            'LocalStorageModule'
+            'LocalStorageModule',
+            'oitozero.ngSweetAlert'
         ]);        
 }());

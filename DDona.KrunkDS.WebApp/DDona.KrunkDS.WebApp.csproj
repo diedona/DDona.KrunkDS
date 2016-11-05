@@ -136,15 +136,18 @@
     <Content Include="app\pages\login\login.html" />
     <Content Include="app\pages\logout\logout.controller.js" />
     <Content Include="app\services\login.service.js" />
+    <Content Include="app\services\notification.service.js" />
     <Content Include="css\animate\animate.css" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />
+    <Content Include="css\sweetalert\sweetalert.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="img\Krunk.jpg" />
     <Content Include="index.html" />
     <Content Include="scripts\angular\angular-animate.js" />
     <Content Include="scripts\angular\angular-local-storage.js" />
+    <Content Include="scripts\angular\angular-sweetalert.js" />
     <Content Include="scripts\angular\angular-touch.js" />
     <Content Include="scripts\angular\angular-ui-bootstrap-tpls-2.2.0.js" />
     <Content Include="scripts\angular\angular-ui-router.js" />
@@ -155,6 +158,7 @@
     <Content Include="app\app.js" />
     <Content Include="scripts\bootstrap\bootstrap.js" />
     <Content Include="scripts\jquery\jquery-3.1.1.js" />
+    <Content Include="scripts\sweetalert\sweetalert.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
