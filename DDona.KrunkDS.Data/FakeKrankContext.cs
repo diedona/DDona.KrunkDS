@@ -19,10 +19,12 @@ namespace DDona.KrunkDS.Data
     public class FakeKrankContext : IKrankContext
     {
         public System.Data.Entity.DbSet<Person> Person { get; set; }
+        public System.Data.Entity.DbSet<User> User { get; set; }
 
         public FakeKrankContext()
         {
             Person = new FakeDbSet<Person>("Id");
+            User = new FakeDbSet<User>("Id");
         }
 
         public int SaveChangesCount { get; private set; }

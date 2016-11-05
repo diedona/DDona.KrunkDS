@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.Data", "DDona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.ViewModel", "DDona.KrunkDS.ViewModel\DDona.KrunkDS.ViewModel.csproj", "{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.Service", "DDona.KrunkDS.Service\DDona.KrunkDS.Service.csproj", "{9ACB0A77-3AE2-44E8-9659-F30C34E7A7F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.Util", "DDona.KrunkDS.Util\DDona.KrunkDS.Util.csproj", "{76213343-8D46-4011-B651-2DDEEB2BB37E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDona.KrunkDS.ConsoleApp", "DDona.KrunkDS.ConsoleApp\DDona.KrunkDS.ConsoleApp.csproj", "{489C5555-373B-47C6-8BE6-A90E87F47841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC3AC94-A42F-4B55-BCE7-666C48C706A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ACB0A77-3AE2-44E8-9659-F30C34E7A7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ACB0A77-3AE2-44E8-9659-F30C34E7A7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ACB0A77-3AE2-44E8-9659-F30C34E7A7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ACB0A77-3AE2-44E8-9659-F30C34E7A7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76213343-8D46-4011-B651-2DDEEB2BB37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76213343-8D46-4011-B651-2DDEEB2BB37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76213343-8D46-4011-B651-2DDEEB2BB37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76213343-8D46-4011-B651-2DDEEB2BB37E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489C5555-373B-47C6-8BE6-A90E87F47841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489C5555-373B-47C6-8BE6-A90E87F47841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489C5555-373B-47C6-8BE6-A90E87F47841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489C5555-373B-47C6-8BE6-A90E87F47841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

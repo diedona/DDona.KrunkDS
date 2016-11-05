@@ -13,22 +13,23 @@
 namespace DDona.KrunkDS.Data
 {
 
-    // Person
+    // User
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
-    public class PersonConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<Person>
+    public class UserConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<User>
     {
-        public PersonConfiguration()
+        public UserConfiguration()
             : this("dbo")
         {
         }
 
-        public PersonConfiguration(string schema)
+        public UserConfiguration(string schema)
         {
-            ToTable("Person", schema);
+            ToTable("User", schema);
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName(@"Id").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-            Property(x => x.Name).HasColumnName(@"Name").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(80);
+            Property(x => x.UserName).HasColumnName(@"UserName").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(20);
+            Property(x => x.Password).HasColumnName(@"Password").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(120);
             Property(x => x.IsActive).HasColumnName(@"IsActive").IsRequired().HasColumnType("bit");
         }
     }

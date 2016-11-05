@@ -19,6 +19,7 @@ namespace DDona.KrunkDS.Data
     public class KrankContext : System.Data.Entity.DbContext, IKrankContext
     {
         public System.Data.Entity.DbSet<Person> Person { get; set; } // Person
+        public System.Data.Entity.DbSet<User> User { get; set; } // User
 
         static KrankContext()
         {
@@ -69,11 +70,13 @@ namespace DDona.KrunkDS.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new PersonConfiguration());
+            modelBuilder.Configurations.Add(new UserConfiguration());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
             modelBuilder.Configurations.Add(new PersonConfiguration(schema));
+            modelBuilder.Configurations.Add(new UserConfiguration(schema));
             return modelBuilder;
         }
     }
