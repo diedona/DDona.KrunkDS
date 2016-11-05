@@ -5,3 +5,25 @@
 .margin-top {
     margin-top: 60px;
 }
+
+body {
+    background-image: url('/img/background/weather.png');
+}
+
+.white-bg {
+    background-color: #FFF;
+}
+
+.rounded-bottom {
+    -webkit-border-bottom-right-radius: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.tab-pane {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

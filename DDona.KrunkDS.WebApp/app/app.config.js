@@ -41,6 +41,11 @@
             url: '/help',
             templateUrl: 'app/pages/help/help.html',
             controller: 'HelpController as helpCtrl'
+        })
+        .state('app.usuarios', {
+            url: '/usuarios',
+            templateUrl: 'app/pages/user/user.html',
+            controller: 'UserController as userCtrl'
         });
 
         function isLoggedIn($q, $timeout, $state, AuthHelper) {
