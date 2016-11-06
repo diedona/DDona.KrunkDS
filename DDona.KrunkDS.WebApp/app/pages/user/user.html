@@ -16,7 +16,10 @@
                         Listagem
                     </uib-tab-heading>
                     
-                    <table datatable="" class="table table-hover table-striped">
+                    <table datatable="" 
+                           class="table table-hover table-striped" 
+                           dt-options="userCtrl.dtOptions" 
+                           dt-column-defs="userCtrl.dtColumnDefs">
                         <thead>
                             <tr>
                                 <th>ID</th>
