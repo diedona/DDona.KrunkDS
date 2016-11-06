@@ -54,6 +54,7 @@
         function isLoggedIn($q, $timeout, $state, AuthHelper) {
             var deferred = $q.defer();
 
+            //http://stackoverflow.com/questions/29811045/how-to-redirect-in-a-ui-router-resolve
             // $timeout is an example; it also can be an xhr request or any other async function
             $timeout(function () {
                 var authentication = AuthHelper.getAuthentication();
