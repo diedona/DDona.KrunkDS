@@ -10,6 +10,7 @@
             'angularValidator',
             'LocalStorageModule',
             'oitozero.ngSweetAlert',
-            'ng.httpLoader'
+            'ng.httpLoader',
+            'datatables'
         ]);        
 }());

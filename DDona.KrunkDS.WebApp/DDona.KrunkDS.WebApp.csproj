@@ -144,12 +144,15 @@
     <Content Include="css\animate\animate.css" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
+    <Content Include="css\datatables\angular-datatables.css" />
+    <Content Include="css\datatables\dataTables.bootstrap.css" />
     <Content Include="css\font-awesome\font-awesome.css" />
     <Content Include="css\sweetalert\sweetalert.css" />
     <Content Include="dist\styles.min.css" />
     <Content Include="dist\xpao.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="gulpfile.js" />
     <Content Include="img\background\diamond.png" />
     <Content Include="img\background\weather.png" />
@@ -159,6 +162,7 @@
     <Content Include="img\loading\squares.svg" />
     <Content Include="index.html" />
     <Content Include="scripts\angular\angular-animate.js" />
+    <Content Include="scripts\angular\angular-datatables.js" />
     <Content Include="scripts\angular\angular-http-loader.js" />
     <Content Include="scripts\angular\angular-local-storage.js" />
     <Content Include="scripts\angular\angular-sweetalert.js" />
@@ -171,6 +175,8 @@
     <Content Include="app\app.core.js" />
     <Content Include="app\app.js" />
     <Content Include="scripts\bootstrap\bootstrap.js" />
+    <Content Include="scripts\datatables\dataTables.bootstrap.js" />
+    <Content Include="scripts\datatables\datatables.js" />
     <Content Include="scripts\jquery\jquery-3.1.1.js" />
     <Content Include="scripts\sweetalert\sweetalert.js" />
     <Content Include="Web.config" />
@@ -189,6 +195,10 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="package.json" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\krunkds - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\krunkds - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
