@@ -30,6 +30,9 @@
             url: '/login',
             templateUrl: 'app/pages/login/login.html',
             controller: 'LoginController as loginCtrl',
+            resolve: {
+                redirectToHome: redirectToHome
+            }
         })
         .state('app.logout', {
             url: '/logout',
@@ -67,6 +70,22 @@
                     // everything is fine, proceed
                     deferred.resolve();
                 }
+            });
+
+            return deferred.promise;
+        }
+
+        function redirectToHome($q, $timeout, $state, AuthHelper) {
+            var deferred = $q.defer();
+
+            $timeout(function () {
+
+                var authentication = AuthHelper.getAuthentication();
+                if (authentication !== null && (authentication.IsAuth)) {
+                    $state.go('app.home');
+                }
+
+                deferred.resolve();
             });
 
             return deferred.promise;
