@@ -14,5 +14,15 @@ namespace DDona.KrunkDS.ViewModel.Base.DataTables
         public List<DatatableColumnViewModel> columns { get; set; }
         public DatatableOrderViewModel order { get; set; }
         public DatatableColumnSearchViewModel search { get; set; }
+
+        public string OrderColumnName
+        {
+            get
+            {
+                var column = columns[order.column];
+                string orderStr = string.IsNullOrEmpty(column.name) ? column.data : column.name;
+                return orderStr;
+            }
+        }
     }
 }
