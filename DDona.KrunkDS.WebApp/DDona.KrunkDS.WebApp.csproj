@@ -187,6 +187,8 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="package.json" />
+    <None Include="Properties\PublishProfiles\krunkds - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\krunkds - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
