@@ -54,6 +54,7 @@
             controller: 'UserController as userCtrl'
         });
 
+        isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper'];
         function isLoggedIn($q, $timeout, $state, AuthHelper) {
             var deferred = $q.defer();
 
@@ -75,6 +76,7 @@
             return deferred.promise;
         }
 
+        redirectToHome.$inject = ['$q', '$timeout', '$state', 'AuthHelper'];
         function redirectToHome($q, $timeout, $state, AuthHelper) {
             var deferred = $q.defer();
 
