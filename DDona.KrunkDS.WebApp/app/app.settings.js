@@ -9,6 +9,7 @@
     function SettingsHelper() {
         var service = {
             BaseUrl: 'http://localhost:49972/'
+            //BaseUrl: 'http://krunkds.azurewebsites.net/'
         };
 
         return service;
