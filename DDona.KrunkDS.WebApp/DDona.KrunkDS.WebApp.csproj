@@ -148,6 +148,7 @@
     <Content Include="css\sweetalert\sweetalert.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="gulpfile.js" />
     <Content Include="img\background\diamond.png" />
     <Content Include="img\background\weather.png" />
     <Content Include="img\Help.jpg" />
@@ -185,6 +186,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
