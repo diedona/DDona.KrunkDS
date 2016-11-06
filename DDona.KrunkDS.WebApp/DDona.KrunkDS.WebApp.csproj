@@ -146,6 +146,8 @@
     <Content Include="css\custom\custom.styles.css" />
     <Content Include="css\font-awesome\font-awesome.css" />
     <Content Include="css\sweetalert\sweetalert.css" />
+    <Content Include="dist\styles.min.css" />
+    <Content Include="dist\xpao.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="gulpfile.js" />

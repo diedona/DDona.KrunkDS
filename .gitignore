@@ -240,3 +240,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/DDona.KrunkDS.WebApp/dist/xpao.min.js
+/DDona.KrunkDS.WebApp/dist/styles.min.css
