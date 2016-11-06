@@ -41,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseViewModel.cs" />
+    <Compile Include="Base\DataTables\DatatableColumnSearchViewModel.cs" />
+    <Compile Include="Base\DataTables\DatatableColumnViewModel.cs" />
+    <Compile Include="Base\DataTables\DatatableOrderViewModel.cs" />
+    <Compile Include="Base\DataTables\DatatableReturnViewModel.cs" />
+    <Compile Include="Base\DataTables\DatatableViewModel.cs" />
     <Compile Include="Base\ListResultViewModel.cs" />
     <Compile Include="Base\SingleResultViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

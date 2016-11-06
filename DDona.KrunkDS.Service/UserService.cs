@@ -1,6 +1,7 @@
 ﻿using DDona.KrunkDS.Data;
 using DDona.KrunkDS.Util.Encryption;
 using DDona.KrunkDS.ViewModel.Base;
+using DDona.KrunkDS.ViewModel.Base.DataTables;
 using DDona.KrunkDS.ViewModel.User;
 using System;
 using System.Collections.Generic;
@@ -71,6 +72,18 @@ namespace DDona.KrunkDS.Service
                     UserName = User.UserName
                 };
             }
+
+            return Result;
+        }
+
+        public DatatableReturnViewModel<UserViewModel> GetUsers(DatatableViewModel Model)
+        {
+            DatatableReturnViewModel<UserViewModel> Result = new DatatableReturnViewModel<UserViewModel>();
+
+            Result.draw = Model.draw;
+            Result.recordsFiltered = 0;
+            Result.recordsTotal = 0;
+            Result.data = new UserViewModel[] { };
 
             return Result;
         }

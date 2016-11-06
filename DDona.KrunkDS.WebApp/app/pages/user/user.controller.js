@@ -4,16 +4,16 @@
         .module('app')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['DTOptionsBuilder', 'DTColumnDefBuilder'];
+    UserController.$inject = ['SettingsHelper', 'DTOptionsBuilder', 'DTColumnBuilder', 'AuthHelper'];
 
-    function UserController(DTOptionsBuilder, DTColumnDefBuilder) {
+    function UserController(SettingsHelper, DTOptionsBuilder, DTColumnBuilder, AuthHelper) {
         var vm = this;
         vm.working = false;
         vm.tabIndex = 0;
         vm.showDetails = false;
 
         vm.dtOptions = dtOptions();
-        vm.dtColumnDefs = dtColumnDefs();
+        vm.dtColumns = dtColumns();
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -32,12 +32,26 @@
 
         function dtOptions() {
             return DTOptionsBuilder.newOptions()
+                .withOption('ajax', {
+                    url: SettingsHelper.BaseUrl + 'api/User/DataTables',
+                    type: 'POST',
+                    headers: {
+                        Authorization: 'Bearer ' + AuthHelper.getAuthentication().Token
+                    }
+                })
+                .withDataProp('data')
+                .withOption('processing', true)
+                .withOption('serverSide', true)
                 .withPaginationType('full_numbers')
-                .withDOM('lrtip');
+                .withDOM('lrtip')
         }
 
-        function dtColumnDefs() {
-            return [];
+        function dtColumns() {
+            return [
+                DTColumnBuilder.newColumn('UserName').withTitle('Nome de Usuário'),
+                DTColumnBuilder.newColumn('IsActive').withTitle('Ativo'),
+                DTColumnBuilder.newColumn('Actions').withTitle('').notSortable()
+            ];
         }
     }
 
