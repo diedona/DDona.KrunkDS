@@ -13,7 +13,7 @@
 namespace DDona.KrunkDS.Data
 {
 
-    public interface IKrankContext : System.IDisposable
+    public interface IKrunkContext : System.IDisposable
     {
         System.Data.Entity.DbSet<Person> Person { get; set; } // Person
         System.Data.Entity.DbSet<User> User { get; set; } // User

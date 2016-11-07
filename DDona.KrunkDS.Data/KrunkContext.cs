@@ -16,37 +16,37 @@ namespace DDona.KrunkDS.Data
     using System.Linq;
 
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
-    public class KrankContext : System.Data.Entity.DbContext, IKrankContext
+    public class KrunkContext : System.Data.Entity.DbContext, IKrunkContext
     {
         public System.Data.Entity.DbSet<Person> Person { get; set; } // Person
         public System.Data.Entity.DbSet<User> User { get; set; } // User
 
-        static KrankContext()
+        static KrunkContext()
         {
-            System.Data.Entity.Database.SetInitializer<KrankContext>(null);
+            System.Data.Entity.Database.SetInitializer<KrunkContext>(null);
         }
 
-        public KrankContext()
-            : base("Name=KrankContext")
+        public KrunkContext()
+            : base("Name=KrunkContext")
         {
         }
 
-        public KrankContext(string connectionString)
+        public KrunkContext(string connectionString)
             : base(connectionString)
         {
         }
 
-        public KrankContext(string connectionString, System.Data.Entity.Infrastructure.DbCompiledModel model)
+        public KrunkContext(string connectionString, System.Data.Entity.Infrastructure.DbCompiledModel model)
             : base(connectionString, model)
         {
         }
 
-        public KrankContext(System.Data.Common.DbConnection existingConnection, bool contextOwnsConnection)
+        public KrunkContext(System.Data.Common.DbConnection existingConnection, bool contextOwnsConnection)
             : base(existingConnection, contextOwnsConnection)
         {
         }
 
-        public KrankContext(System.Data.Common.DbConnection existingConnection, System.Data.Entity.Infrastructure.DbCompiledModel model, bool contextOwnsConnection)
+        public KrunkContext(System.Data.Common.DbConnection existingConnection, System.Data.Entity.Infrastructure.DbCompiledModel model, bool contextOwnsConnection)
             : base(existingConnection, model, contextOwnsConnection)
         {
         }

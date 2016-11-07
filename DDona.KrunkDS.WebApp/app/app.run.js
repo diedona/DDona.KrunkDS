@@ -4,10 +4,14 @@
         .module('app')
         .run(run);
 
-    run.$inject = ['LoginService'];
+    run.$inject = ['LoginService', 'DTDefaultOptions'];
 
-    function run(LoginService) {
+    function run(LoginService, DTDefaultOptions) {
         LoginService.fillAuthData();
+
+        DTDefaultOptions.setLanguage({
+            sProcessing: '<img src="img/loading/squares.svg">'
+        });
     }
 
 }());

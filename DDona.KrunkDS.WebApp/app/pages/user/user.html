@@ -15,13 +15,32 @@
                     <uib-tab-heading>
                         Listagem
                     </uib-tab-heading>
-                    
-                    <table datatable="" 
-                           class="table table-hover table-striped" 
-                           dt-options="userCtrl.dtOptions" 
-                           dt-columns="userCtrl.dtColumns">
-                    </table>
-                    
+
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label class="control-label">Busca:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="userCtrl.value" />
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">&nbsp;</label>
+                                <button class="btn btn-primary form-control"
+                                        type="button"
+                                        ng-click="userCtrl.search()">
+                                    <i class="fa fa-search"></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table datatable=""
+                           class="table table-hover table-striped"
+                           dt-options="userCtrl.dtOptions"
+                           dt-columns="userCtrl.dtColumns"
+                           dt-instance="userCtrl.dataTable"></table>
+
                 </uib-tab>
                 <uib-tab index="1" ng-show="userCtrl.showDetails">
                     <uib-tab-heading>

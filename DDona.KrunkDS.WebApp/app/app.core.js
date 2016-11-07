@@ -11,6 +11,7 @@
             'LocalStorageModule',
             'oitozero.ngSweetAlert',
             'ng.httpLoader',
-            'datatables'
+            'datatables',
+            'datatables.options'
         ]);        
 }());

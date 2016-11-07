@@ -21,6 +21,7 @@ namespace DDona.KrunkDS.Data
         public string UserName { get; set; } // UserName (length: 20)
         public string Password { get; set; } // Password (length: 120)
         public bool IsActive { get; set; } // IsActive
+        public string Email { get; set; } // Email (length: 150)
     }
 
 }

@@ -58,13 +58,13 @@
     <Compile Include="FakeDbSet.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FakeKrankContext.cs">
+    <Compile Include="FakeKrunkContext.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="IKrankContext.cs">
+    <Compile Include="IKrunkContext.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="KrankContext.cs">
+    <Compile Include="KrunkContext.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
     <Compile Include="Person.cs">

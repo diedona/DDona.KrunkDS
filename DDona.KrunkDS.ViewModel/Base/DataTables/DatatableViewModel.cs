@@ -11,17 +11,18 @@ namespace DDona.KrunkDS.ViewModel.Base.DataTables
         public int draw { get; set; }
         public int start { get; set; }
         public int length { get; set; }
+        public string value { get; set; }
         public List<DatatableColumnViewModel> columns { get; set; }
-        public DatatableOrderViewModel order { get; set; }
+        public List<DatatableOrderViewModel> order { get; set; }
         public DatatableColumnSearchViewModel search { get; set; }
 
-        public string OrderColumnName
+        public string OrderColumn
         {
             get
             {
-                var column = columns[order.column];
+                var column = columns[order.FirstOrDefault().column];
                 string orderStr = string.IsNullOrEmpty(column.name) ? column.data : column.name;
-                return orderStr;
+                return orderStr + " " + order.FirstOrDefault().dir;
             }
         }
     }
