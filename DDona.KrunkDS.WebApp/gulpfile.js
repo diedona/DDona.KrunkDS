@@ -14,6 +14,8 @@ gulp.task('concat-uglify-js', function () {
             './scripts/jquery/jquery-3.1.1.js',
             './scripts/bootstrap/bootstrap.js',
             './scripts/sweetalert/sweetalert.js',
+            './scripts/datatables/datatables.js',
+            './scripts/datatables/dataTables.bootstrap.js',
             //ANGULAR
             './scripts/angular/angular.js',
             './scripts/angular/angular-ui-router.js',
@@ -24,6 +26,7 @@ gulp.task('concat-uglify-js', function () {
             './scripts/angular/angular-local-storage.js',
             './scripts/angular/angular-sweetalert.js',
             './scripts/angular/angular-http-loader.js',
+            './scripts/angular/angular-datatables.js',
             //APP
             './app/app.js',
             './app/app.core.js',
