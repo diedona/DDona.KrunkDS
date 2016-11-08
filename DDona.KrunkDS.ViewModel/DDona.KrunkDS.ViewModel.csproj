@@ -48,6 +48,7 @@
     <Compile Include="Base\DataTables\DatatableViewModel.cs" />
     <Compile Include="Base\ListResultViewModel.cs" />
     <Compile Include="Base\SingleResultViewModel.cs" />
+    <Compile Include="Cup\CupViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\UserViewModel.cs" />
   </ItemGroup>

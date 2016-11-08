@@ -13,15 +13,14 @@
 namespace DDona.KrunkDS.Data
 {
 
-    public interface IKrunkContext : System.IDisposable
+    // Cup
+    [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
+    public class Cup
     {
-        System.Data.Entity.DbSet<Cup> Cup { get; set; } // Cup
-        System.Data.Entity.DbSet<Person> Person { get; set; } // Person
-        System.Data.Entity.DbSet<User> User { get; set; } // User
-
-        int SaveChanges();
-        System.Threading.Tasks.Task<int> SaveChangesAsync();
-        System.Threading.Tasks.Task<int> SaveChangesAsync(System.Threading.CancellationToken cancellationToken);
+        public int Id { get; set; } // Id (Primary key)
+        public string Description { get; set; } // Description (length: 50)
+        public decimal Price { get; set; } // Price
+        public bool IsActive { get; set; } // IsActive
     }
 
 }

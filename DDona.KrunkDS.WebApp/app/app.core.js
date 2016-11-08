@@ -12,6 +12,7 @@
             'oitozero.ngSweetAlert',
             'ng.httpLoader',
             'datatables',
-            'datatables.options'
+            'datatables.options',
+            'ui.utils.masks'
         ]);        
 }());

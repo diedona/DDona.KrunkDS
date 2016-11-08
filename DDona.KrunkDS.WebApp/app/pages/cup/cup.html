@@ -1,0 +1,65 @@
+﻿<div class="animated fadeIn">
+
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Copos</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <uib-tabset active="cupCtrl.tabIndex">
+                <uib-tab index="0">
+                    <uib-tab-heading>
+                        Listagem
+                    </uib-tab-heading>
+
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Descrição:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="cupCtrl.value" />
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">Valor:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       ui-number-mask
+                                       ng-model="cupCtrl.valueDecimal" />
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">&nbsp;</label>
+                                <button class="btn btn-primary form-control"
+                                        type="button"
+                                        ng-click="cupCtrl.search()">
+                                    <i class="fa fa-search"></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table datatable=""
+                           class="table table-hover table-striped"
+                           dt-options="cupCtrl.dtOptions"
+                           dt-columns="cupCtrl.dtColumns"
+                           dt-instance="cupCtrl.dataTable"></table>
+
+                </uib-tab>
+                <uib-tab index="1" ng-show="cupCtrl.showDetails">
+                    <uib-tab-heading>
+                        Detalhes
+                    </uib-tab-heading>
+
+                    Other content
+                </uib-tab>
+            </uib-tabset>
+
+        </div>
+    </div>
+
+</div>

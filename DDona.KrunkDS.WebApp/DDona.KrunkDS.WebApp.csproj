@@ -126,6 +126,8 @@
     <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\helpers\interceptor-helper.service.js" />
     <Content Include="app\layout\loader.tpl.html" />
+    <Content Include="app\pages\cup\cup.html" />
+    <Content Include="app\pages\cup\cup.controller.js" />
     <Content Include="app\pages\help\help.controller.js" />
     <Content Include="app\pages\help\help.html" />
     <Content Include="app\pages\home\home.controller.js" />
@@ -164,7 +166,9 @@
     <Content Include="scripts\angular\angular-animate.js" />
     <Content Include="scripts\angular\angular-datatables.js" />
     <Content Include="scripts\angular\angular-http-loader.js" />
+    <Content Include="scripts\angular\angular-input-masks-standalone.js" />
     <Content Include="scripts\angular\angular-local-storage.js" />
+    <Content Include="scripts\angular\angular-locale_pt-br.js" />
     <Content Include="scripts\angular\angular-sweetalert.js" />
     <Content Include="scripts\angular\angular-touch.js" />
     <Content Include="scripts\angular\angular-ui-bootstrap-tpls-2.2.0.js" />
@@ -182,6 +186,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CupController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Infrastructure\ClaimDataManager.cs" />
     <Compile Include="Infrastructure\Providers\SimpleAuthorizationServerProvider.cs" />

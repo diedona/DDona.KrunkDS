@@ -12,6 +12,7 @@ namespace DDona.KrunkDS.ViewModel.Base.DataTables
         public int start { get; set; }
         public int length { get; set; }
         public string value { get; set; }
+        public decimal? valueDecimal { get; set; }
         public List<DatatableColumnViewModel> columns { get; set; }
         public List<DatatableOrderViewModel> order { get; set; }
         public DatatableColumnSearchViewModel search { get; set; }

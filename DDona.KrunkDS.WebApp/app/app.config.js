@@ -52,7 +52,12 @@
             url: '/usuarios',
             templateUrl: 'app/pages/user/user.html',
             controller: 'UserController as userCtrl'
-        });
+        })
+        .state('app.copos', {
+            url: '/copos',
+            templateUrl: 'app/pages/cup/cup.html',
+            controller: 'CupController as cupCtrl'
+        })
 
         isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper'];
         function isLoggedIn($q, $timeout, $state, AuthHelper) {

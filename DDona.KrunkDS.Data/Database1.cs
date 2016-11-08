@@ -7,7 +7,7 @@
 // Do not make changes directly to this file - edit the template instead.
 //
 // The following connection settings were used to generate this file:
-//     Configuration file:     "DDona.KrunkDS.WebApp\Web.config"
+//     Configuration file:     "DDona.KrunkDS.Data\App.config"
 //     Connection String Name: "KrunkContext"
 //     Connection String:      "Server=.\SQLExpress;Database=Krunk;User Id=sa;password=**zapped**;;MultipleActiveResultSets=true;"
 // ------------------------------------------------------------------------------------------------

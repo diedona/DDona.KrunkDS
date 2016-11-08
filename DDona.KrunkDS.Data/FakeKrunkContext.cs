@@ -18,11 +18,13 @@ namespace DDona.KrunkDS.Data
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
     public class FakeKrunkContext : IKrunkContext
     {
+        public System.Data.Entity.DbSet<Cup> Cup { get; set; }
         public System.Data.Entity.DbSet<Person> Person { get; set; }
         public System.Data.Entity.DbSet<User> User { get; set; }
 
         public FakeKrunkContext()
         {
+            Cup = new FakeDbSet<Cup>("Id");
             Person = new FakeDbSet<Person>("Id");
             User = new FakeDbSet<User>("Id");
         }

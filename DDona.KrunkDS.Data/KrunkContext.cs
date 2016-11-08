@@ -18,6 +18,7 @@ namespace DDona.KrunkDS.Data
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
     public class KrunkContext : System.Data.Entity.DbContext, IKrunkContext
     {
+        public System.Data.Entity.DbSet<Cup> Cup { get; set; } // Cup
         public System.Data.Entity.DbSet<Person> Person { get; set; } // Person
         public System.Data.Entity.DbSet<User> User { get; set; } // User
 
@@ -69,12 +70,14 @@ namespace DDona.KrunkDS.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new CupConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
         }
 
         public static System.Data.Entity.DbModelBuilder CreateModel(System.Data.Entity.DbModelBuilder modelBuilder, string schema)
         {
+            modelBuilder.Configurations.Add(new CupConfiguration(schema));
             modelBuilder.Configurations.Add(new PersonConfiguration(schema));
             modelBuilder.Configurations.Add(new UserConfiguration(schema));
             return modelBuilder;

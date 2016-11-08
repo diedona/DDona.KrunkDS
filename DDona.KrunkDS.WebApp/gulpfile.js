@@ -27,6 +27,8 @@ gulp.task('concat-uglify-js', function () {
             './scripts/angular/angular-sweetalert.js',
             './scripts/angular/angular-http-loader.js',
             './scripts/angular/angular-datatables.js',
+            './scripts/angular/angular-locale_pt-br.js',
+            './scripts/angular/angular-input-masks-standalone.js',
             //APP
             './app/app.js',
             './app/app.core.js',
