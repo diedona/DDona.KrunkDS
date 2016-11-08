@@ -55,14 +55,14 @@ namespace DDona.KrunkDS.Service
 
                 recordsTotal = Cup.Count();
 
-                // DO FILTERING
-                if ((!string.IsNullOrEmpty(Model.value)) || (Model.valueDecimal.HasValue))
+                if((!string.IsNullOrEmpty(Model.value)))
                 {
-                    Cup = Cup.Where(x =>
-                        x.Description.Contains(Model.value)
-                        ||
-                        (Model.valueDecimal.HasValue && x.Price == Model.valueDecimal.Value)
-                    );
+                    Cup = Cup.Where(x => x.Description.Contains(Model.value));
+                }
+
+                if(Model.valueDecimal.HasValue)
+                {
+                    Cup = Cup.Where(x => x.Price == Model.valueDecimal.Value);
                 }
 
                 recordsFiltered = Cup.Count();
