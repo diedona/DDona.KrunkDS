@@ -79,10 +79,10 @@
                             return "<span class='label label-default'>Inativo</span>";
                         }
                     }),
-                DTColumnBuilder.newColumn('Actions').withTitle('').notSortable()
-                    .renderWith(function (data, type, full) {
-                        return "<button class='btn btn-default' ng-click='userCtrl.detailsUser("+full.Id+");'>Ver</button>";
-                    })
+                //DTColumnBuilder.newColumn('Actions').withTitle('').notSortable()
+                //    .renderWith(function (data, type, full) {
+                //        return "<button class='btn btn-default' ng-click='userCtrl.detailsUser("+full.Id+");'>Ver</button>";
+                //    })
             ];
         }
     }

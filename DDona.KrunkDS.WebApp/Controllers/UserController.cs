@@ -1,5 +1,6 @@
 ﻿using DDona.KrunkDS.Service;
 using DDona.KrunkDS.ViewModel.Base.DataTables;
+using DDona.KrunkDS.WebApp.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Infrastructure\ClaimDataManager.cs" />
     <Compile Include="Infrastructure\Providers\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\WebApiConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
