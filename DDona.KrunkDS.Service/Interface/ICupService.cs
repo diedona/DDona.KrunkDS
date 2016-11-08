@@ -8,5 +8,8 @@ namespace DDona.KrunkDS.Service
     {
         SingleResultViewModel<CupViewModel> GetById(int Id);
         DatatableReturnViewModel<CupViewModel> GetCups(DatatableViewModel Model);
+        SingleResultViewModel<bool> SaveCup(CupViewModel Model);
+        SingleResultViewModel<bool> UpdateCup(CupViewModel Model);
+        SingleResultViewModel<bool> DeleteCup(int Id);
     }
 }

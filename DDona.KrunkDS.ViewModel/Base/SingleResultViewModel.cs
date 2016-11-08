@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DDona.KrunkDS.ViewModel.Base
 {
-    public class SingleResultViewModel<T> : BaseViewModel where T:class
+    public class SingleResultViewModel<T> : BaseViewModel
     {
         public SingleResultViewModel()
         {

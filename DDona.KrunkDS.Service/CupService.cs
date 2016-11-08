@@ -23,7 +23,7 @@ namespace DDona.KrunkDS.Service
                     .Where(x => x.Id == Id)
                     .FirstOrDefault();
 
-                if(Cup == null)
+                if (Cup == null)
                 {
                     Result.Success = false;
                     Result.Messages.Add("Resource not found");
@@ -55,12 +55,12 @@ namespace DDona.KrunkDS.Service
 
                 recordsTotal = Cup.Count();
 
-                if((!string.IsNullOrEmpty(Model.value)))
+                if ((!string.IsNullOrEmpty(Model.value)))
                 {
                     Cup = Cup.Where(x => x.Description.Contains(Model.value));
                 }
 
-                if(Model.valueDecimal.HasValue)
+                if (Model.valueDecimal.HasValue)
                 {
                     Cup = Cup.Where(x => x.Price == Model.valueDecimal.Value);
                 }
@@ -86,6 +86,101 @@ namespace DDona.KrunkDS.Service
             Result.draw = Model.draw;
             Result.recordsFiltered = recordsFiltered;
             Result.recordsTotal = recordsTotal;
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> SaveCup(CupViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                Cup Cup = new Cup()
+                {
+                    Description = Model.Description,
+                    IsActive = Model.IsActive,
+                    Price = Model.Price
+                };
+
+                try
+                {
+                    _db.Cup.Add(Cup);
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> UpdateCup(CupViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                Cup Cup = _db.Cup
+                    .Where(x => x.Id == Model.Id)
+                    .FirstOrDefault();
+
+                if (Cup == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não encontrado");
+                    return Result;
+                }
+
+                Cup.Description = Model.Description;
+                Cup.IsActive = Model.IsActive;
+                Cup.Price = Model.Price;
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> DeleteCup(int Id)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                Cup Cup = _db.Cup
+                    .Where(x => x.Id == Id)
+                    .FirstOrDefault();
+
+                if (Cup == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não encontrado");
+                    return Result;
+                }
+
+                try
+                {
+                    _db.Cup.Remove(Cup);
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
 
             return Result;
         }

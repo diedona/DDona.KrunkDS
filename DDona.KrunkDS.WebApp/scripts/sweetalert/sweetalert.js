@@ -64,6 +64,10 @@
             var sweetAlert, swal;
 
             exports['default'] = sweetAlert = swal = function () {
+
+                if (previousWindowKeyDown !== undefined && window.onkeydown !== previousWindowKeyDown)
+                    window.onkeydown = previousWindowKeyDown;
+
                 var customizations = arguments[0];
 
                 _hasClass$addClass$removeClass$escapeHtml$_show$show$_hide$hide$isDescendant$getTopMargin$fadeIn$fadeOut$fireClick$stopEventPropagation.addClass(document.body, 'stop-scrolling');
