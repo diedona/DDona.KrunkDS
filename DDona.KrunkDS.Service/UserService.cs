@@ -91,7 +91,7 @@ namespace DDona.KrunkDS.Service
                 recordsTotal = User.Count();
 
                 // DO FILTERING
-                if(!string.IsNullOrEmpty(Model.value))
+                if (!string.IsNullOrEmpty(Model.value))
                 {
                     User = User.Where(x =>
                         x.Email.Contains(Model.value)
@@ -121,6 +121,69 @@ namespace DDona.KrunkDS.Service
             Result.draw = Model.draw;
             Result.recordsFiltered = recordsFiltered;
             Result.recordsTotal = recordsTotal;
+
+            return Result;
+        }
+
+        public SingleResultViewModel<UserViewModel> GetById(int Id)
+        {
+            SingleResultViewModel<UserViewModel> Result = new SingleResultViewModel<UserViewModel>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                User User = _db.User
+                    .Where(x => x.Id == Id)
+                    .FirstOrDefault();
+
+                if(User == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não existente");
+                    return Result;
+                }
+
+                Result.ResultObject = new UserViewModel()
+                {
+                    Email = User.Email,
+                    Id = User.Id,
+                    ReceiveNotification = User.ReceiveNotification,
+                    UserName = User.UserName,
+                    IsActive = User.IsActive
+                };
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> UpdateReceiveNotification(int Id, bool Status)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                User User = _db.User
+                    .Where(x => x.Id == Id)
+                    .FirstOrDefault();
+
+                if (User == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não existente");
+                    return Result;
+                }
+
+                User.ReceiveNotification = Status;
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
 
             return Result;
         }

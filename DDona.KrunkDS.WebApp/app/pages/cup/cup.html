@@ -118,11 +118,10 @@
                                 </div>
                                 <div class="col-sm-2 form-group">
                                     <label class="control-label">Status:</label>
-                                    <div class="checkbox">
-                                        <label class="">
-                                            <input type="checkbox"
-                                                   ng-model="cupCtrl.cup.IsActive"> Ativo
-                                        </label>
+                                    <br />
+                                    <div class="btn-group">
+                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="true">Ativo</label>
+                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="false">Inativo</label>
                                     </div>
                                 </div>
                             </div>

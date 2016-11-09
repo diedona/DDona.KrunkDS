@@ -9,5 +9,7 @@ namespace DDona.KrunkDS.Service
         SingleResultViewModel<UserViewModel> CreateUser(UserViewModel Model);
         SingleResultViewModel<UserViewModel> GetByPassword(string UserName, string Password);
         DatatableReturnViewModel<UserViewModel> GetUsers(DatatableViewModel Model);
+        SingleResultViewModel<UserViewModel> GetById(int Id);
+        SingleResultViewModel<bool> UpdateReceiveNotification(int Id, bool Status);
     }
 }

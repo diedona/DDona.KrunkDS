@@ -30,8 +30,9 @@ namespace DDona.KrunkDS.Data
             Property(x => x.Id).HasColumnName(@"Id").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.UserName).HasColumnName(@"UserName").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(20);
             Property(x => x.Password).HasColumnName(@"Password").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(120);
-            Property(x => x.IsActive).HasColumnName(@"IsActive").IsRequired().HasColumnType("bit");
             Property(x => x.Email).HasColumnName(@"Email").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(150);
+            Property(x => x.ReceiveNotification).HasColumnName(@"ReceiveNotification").IsRequired().HasColumnType("bit");
+            Property(x => x.IsActive).HasColumnName(@"IsActive").IsRequired().HasColumnType("bit");
         }
     }
 

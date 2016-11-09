@@ -21,12 +21,31 @@ namespace DDona.KrunkDS.WebApp.Controllers
             _userService = new UserService();
         }
 
+        #region GET
+        [HttpGet]
+        public IHttpActionResult Get()
+        {
+            int Id = new ClaimDataManager(User).GetUserId();
+            return Ok(_userService.GetById(Id));
+        }
+        #endregion
+
         #region POST
         [HttpPost]
         [Route("DataTables")]
         public IHttpActionResult DataTables(DatatableViewModel Model)
         {
             return Ok(_userService.GetUsers(Model));
+        }
+        #endregion
+
+        #region PUT
+        [HttpPut]
+        [Route("UpdateReceiveNotification")]
+        public IHttpActionResult UpdateReceiveNotification(bool Status)
+        {
+            int Id = new ClaimDataManager(User).GetUserId();
+            return Ok(_userService.UpdateReceiveNotification(Id, Status));
         }
         #endregion
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Web;
 
 namespace DDona.KrunkDS.WebApp.Infrastructure
@@ -13,6 +14,11 @@ namespace DDona.KrunkDS.WebApp.Infrastructure
         public ClaimDataManager(ClaimsPrincipal Claims)
         {
             _claimsPrincipal = Claims;
+        }
+
+        public ClaimDataManager(IPrincipal User)
+        {
+            _claimsPrincipal = (User as ClaimsPrincipal);
         }
 
         public int GetUserId()
