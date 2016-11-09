@@ -138,11 +138,14 @@
     <Content Include="app\pages\login\login.controller.js" />
     <Content Include="app\pages\login\login.html" />
     <Content Include="app\pages\logout\logout.controller.js" />
+    <Content Include="app\pages\profile\profile.controller.js" />
+    <Content Include="app\pages\profile\profile.html" />
     <Content Include="app\pages\user\user.controller.js" />
     <Content Include="app\pages\user\user.html" />
     <Content Include="app\services\cup.service.js" />
     <Content Include="app\services\login.service.js" />
     <Content Include="app\services\notification.service.js" />
+    <Content Include="app\services\profile.service.js" />
     <Content Include="app\services\user.service.js" />
     <Content Include="css\animate\animate.css" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />

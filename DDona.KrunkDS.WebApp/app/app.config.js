@@ -58,6 +58,11 @@
             templateUrl: 'app/pages/cup/cup.html',
             controller: 'CupController as cupCtrl'
         })
+        .state('app.profile', {
+            url: '/profile',
+            templateUrl: 'app/pages/profile/profile.html',
+            controller: 'ProfileController as profileCtrl'
+        })
 
         isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper'];
         function isLoggedIn($q, $timeout, $state, AuthHelper) {
