@@ -46,3 +46,7 @@ body {
     z-index: 1049;
 }
 
+.table > tbody > tr > td {
+    cursor: pointer; 
+    cursor: hand;
+}
