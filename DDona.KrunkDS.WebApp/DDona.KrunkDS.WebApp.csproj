@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="app\app.run.js" />
     <Content Include="app\app.settings.js" />
+    <Content Include="app\directives\valid-date.directive.js" />
     <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\helpers\interceptor-helper.service.js" />
     <Content Include="app\layout\loader.tpl.html" />
@@ -186,6 +187,7 @@
     <Content Include="scripts\datatables\dataTables.bootstrap.js" />
     <Content Include="scripts\datatables\datatables.js" />
     <Content Include="scripts\jquery\jquery-3.1.1.js" />
+    <Content Include="scripts\momentjs\moment.js" />
     <Content Include="scripts\sweetalert\sweetalert.js" />
     <Content Include="Web.config" />
   </ItemGroup>

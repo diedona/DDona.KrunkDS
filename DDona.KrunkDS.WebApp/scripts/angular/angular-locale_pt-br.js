@@ -87,7 +87,8 @@ $provide.value("$locale", {
     "mediumTime": "HH:mm:ss",
     "short": "dd/MM/yy HH:mm",
     "shortDate": "dd/MM/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "HH:mm",
+    "customDate": 'dd/MM/yyyy'
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "R$",
