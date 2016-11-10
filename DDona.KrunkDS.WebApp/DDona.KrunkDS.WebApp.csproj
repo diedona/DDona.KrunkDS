@@ -193,6 +193,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CupController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Infrastructure\ClaimDataManager.cs" />
     <Compile Include="Infrastructure\Providers\SimpleAuthorizationServerProvider.cs" />

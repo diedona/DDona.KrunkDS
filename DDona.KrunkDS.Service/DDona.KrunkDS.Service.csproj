@@ -56,7 +56,9 @@
     <Compile Include="CupService.cs" />
     <Compile Include="Interface\ICupService.cs" />
     <Compile Include="Interface\IUserService.cs" />
+    <Compile Include="Interface\ISettingsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsService.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup />

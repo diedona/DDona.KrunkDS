@@ -80,6 +80,12 @@
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs">
+      <DependentUpon>Database1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsConfiguration.cs">
+      <DependentUpon>Database1.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
