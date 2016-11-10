@@ -1,1 +1,131 @@
-﻿a
+﻿<div class="animated fadeIn">
+
+    <div class="page-header" id="banner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Settings</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <uib-tabset active="settingsCtrl.tabIndex">
+                <uib-tab index="0">
+                    <uib-tab-heading>
+                        Listagem
+                    </uib-tab-heading>
+
+                    <div class="well">
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <label class="control-label">Busca:</label>
+                                <input type="text"
+                                       class="form-control"
+                                       ng-model="settingsCtrl.value" />
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">&nbsp;</label>
+                                <button class="btn btn-primary form-control"
+                                        type="button"
+                                        ng-click="settingsCtrl.search()">
+                                    <i class="fa fa-search"></i> Buscar
+                                </button>
+                            </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">&nbsp;</label>
+                                <button class="btn btn-success form-control"
+                                        type="button"
+                                        ng-click="settingsCtrl.showDetailsToCreate()">
+                                    <i class="fa fa-plus-circle"></i> Novo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table datatable=""
+                           class="table table-hover table-striped"
+                           dt-options="settingsCtrl.dtOptions"
+                           dt-columns="settingsCtrl.dtColumns"
+                           dt-instance="settingsCtrl.dataTable"></table>
+
+                </uib-tab>
+
+                <!-- DETAILS -->
+                <uib-tab index="1" ng-show="cupCtrl.showDetails">
+                    <uib-tab-heading>
+                        Detalhes
+                    </uib-tab-heading>
+
+                    <form novalidate angular-validator angular-validator-submit='cupCtrl.submitForm()' name='cupForm'>
+                        <div class="row">
+                            <div class="col-sm-12 form-group text-left">
+                                <button class="btn btn-default"
+                                        ng-click="cupCtrl.cancel()"
+                                        type="button">
+                                    <i class="fa fa-backward"></i> Cancelar
+                                </button>
+                                <button class="btn btn-danger"
+                                        ng-click="cupCtrl.confirmDelete()"
+                                        ng-disabled="cupCtrl.cup.Id === undefined"
+                                        type="button">
+                                    <i class="fa fa-trash-o"></i> Deletar
+                                </button>
+                                <button class="btn btn-success"
+                                        type="submit">
+                                    <i class="fa fa-save"></i> Salvar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="well">
+
+                            <div class="row">
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Id:</label>
+                                    <input type="text"
+                                           readonly
+                                           ng-required="false"
+                                           ng-model="cupCtrl.cup.Id"
+                                           class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Descrição:</label>
+                                    <input type="text"
+                                           name="Id"
+                                           ng-required="true"
+                                           ng-model="cupCtrl.cup.Description"
+                                           class="form-control" />
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Preço:</label>
+                                    <input type="text"
+                                           ui-number-mask="2"
+                                           name="Price"
+                                           ng-required="true"
+                                           ng-model="cupCtrl.cup.Price"
+                                           class="form-control" />
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Status:</label>
+                                    <br />
+                                    <div class="btn-group">
+                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="true">Ativo</label>
+                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="false">Inativo</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </uib-tab>
+
+            </uib-tabset>
+
+        </div>
+    </div>
+
+</div>
