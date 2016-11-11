@@ -242,3 +242,5 @@ ModelManifest.xml
 .fake/
 /DDona.KrunkDS.WebApp/dist/xpao.min.js
 /DDona.KrunkDS.WebApp/dist/styles.min.css
+/DDona.KrunkDS.WebApp/Properties/PublishProfiles/krunkds - FTP.pubxml
+/DDona.KrunkDS.WebApp/Properties/PublishProfiles/krunkds - Web Deploy.pubxml
