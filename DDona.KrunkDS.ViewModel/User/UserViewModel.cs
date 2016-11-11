@@ -14,6 +14,7 @@ namespace DDona.KrunkDS.ViewModel.User
         public string Email { get; set; }
         public bool ReceiveNotification { get; set; }
         public bool IsActive { get; set; }
+        public string RoleDescription { get; set; }
         public string Actions { get; set; }
     }
 }

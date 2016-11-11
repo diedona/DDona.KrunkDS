@@ -20,6 +20,7 @@ namespace DDona.KrunkDS.Data
     {
         public System.Data.Entity.DbSet<Cup> Cup { get; set; }
         public System.Data.Entity.DbSet<Person> Person { get; set; }
+        public System.Data.Entity.DbSet<Role> Role { get; set; }
         public System.Data.Entity.DbSet<Settings> Settings { get; set; }
         public System.Data.Entity.DbSet<User> User { get; set; }
 
@@ -27,6 +28,7 @@ namespace DDona.KrunkDS.Data
         {
             Cup = new FakeDbSet<Cup>("Id");
             Person = new FakeDbSet<Person>("Id");
+            Role = new FakeDbSet<Role>("Id");
             Settings = new FakeDbSet<Settings>("Id");
             User = new FakeDbSet<User>("Id");
         }

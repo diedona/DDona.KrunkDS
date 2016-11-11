@@ -13,30 +13,23 @@
 namespace DDona.KrunkDS.Data
 {
 
-    // User
+    // Role
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
-    public class UserConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<User>
+    public class RoleConfiguration : System.Data.Entity.ModelConfiguration.EntityTypeConfiguration<Role>
     {
-        public UserConfiguration()
+        public RoleConfiguration()
             : this("dbo")
         {
         }
 
-        public UserConfiguration(string schema)
+        public RoleConfiguration(string schema)
         {
-            ToTable("User", schema);
+            ToTable("Role", schema);
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName(@"Id").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
-            Property(x => x.UserName).HasColumnName(@"UserName").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(20);
-            Property(x => x.Password).HasColumnName(@"Password").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(120);
-            Property(x => x.Email).HasColumnName(@"Email").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(150);
-            Property(x => x.ReceiveNotification).HasColumnName(@"ReceiveNotification").IsRequired().HasColumnType("bit");
+            Property(x => x.Description).HasColumnName(@"Description").IsRequired().IsUnicode(false).HasColumnType("varchar").HasMaxLength(50);
             Property(x => x.IsActive).HasColumnName(@"IsActive").IsRequired().HasColumnType("bit");
-            Property(x => x.RoleId).HasColumnName(@"RoleId").IsRequired().HasColumnType("int");
-
-            // Foreign keys
-            HasRequired(a => a.Role).WithMany(b => b.User).HasForeignKey(c => c.RoleId).WillCascadeOnDelete(false); // FK_User_Role
         }
     }
 

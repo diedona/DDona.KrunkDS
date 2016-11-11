@@ -17,6 +17,7 @@ namespace DDona.KrunkDS.Data
     {
         System.Data.Entity.DbSet<Cup> Cup { get; set; } // Cup
         System.Data.Entity.DbSet<Person> Person { get; set; } // Person
+        System.Data.Entity.DbSet<Role> Role { get; set; } // Role
         System.Data.Entity.DbSet<Settings> Settings { get; set; } // Settings
         System.Data.Entity.DbSet<User> User { get; set; } // User
 

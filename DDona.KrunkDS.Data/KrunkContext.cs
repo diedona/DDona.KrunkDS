@@ -20,6 +20,7 @@ namespace DDona.KrunkDS.Data
     {
         public System.Data.Entity.DbSet<Cup> Cup { get; set; } // Cup
         public System.Data.Entity.DbSet<Person> Person { get; set; } // Person
+        public System.Data.Entity.DbSet<Role> Role { get; set; } // Role
         public System.Data.Entity.DbSet<Settings> Settings { get; set; } // Settings
         public System.Data.Entity.DbSet<User> User { get; set; } // User
 
@@ -73,6 +74,7 @@ namespace DDona.KrunkDS.Data
 
             modelBuilder.Configurations.Add(new CupConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
+            modelBuilder.Configurations.Add(new RoleConfiguration());
             modelBuilder.Configurations.Add(new SettingsConfiguration());
             modelBuilder.Configurations.Add(new UserConfiguration());
         }
@@ -81,6 +83,7 @@ namespace DDona.KrunkDS.Data
         {
             modelBuilder.Configurations.Add(new CupConfiguration(schema));
             modelBuilder.Configurations.Add(new PersonConfiguration(schema));
+            modelBuilder.Configurations.Add(new RoleConfiguration(schema));
             modelBuilder.Configurations.Add(new SettingsConfiguration(schema));
             modelBuilder.Configurations.Add(new UserConfiguration(schema));
             return modelBuilder;

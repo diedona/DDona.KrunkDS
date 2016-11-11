@@ -13,20 +13,21 @@
 namespace DDona.KrunkDS.Data
 {
 
-    // User
+    // Role
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
-    public class User
+    public class Role
     {
         public int Id { get; set; } // Id (Primary key)
-        public string UserName { get; set; } // UserName (length: 20)
-        public string Password { get; set; } // Password (length: 120)
-        public string Email { get; set; } // Email (length: 150)
-        public bool ReceiveNotification { get; set; } // ReceiveNotification
+        public string Description { get; set; } // Description (length: 50)
         public bool IsActive { get; set; } // IsActive
-        public int RoleId { get; set; } // RoleId
 
-        // Foreign keys
-        public virtual Role Role { get; set; } // FK_User_Role
+        // Reverse navigation
+        public virtual System.Collections.Generic.ICollection<User> User { get; set; } // User.FK_User_Role
+
+        public Role()
+        {
+            User = new System.Collections.Generic.List<User>();
+        }
     }
 
 }

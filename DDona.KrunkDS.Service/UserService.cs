@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,6 +50,7 @@ namespace DDona.KrunkDS.Service
             using (KrunkContext _db = new KrunkContext())
             {
                 User User = _db.User
+                    .Include(x => x.Role)
                     .Where(x => x.UserName.Equals(UserName))
                     .FirstOrDefault();
 
@@ -70,7 +72,8 @@ namespace DDona.KrunkDS.Service
                 {
                     Id = User.Id,
                     IsActive = User.IsActive,
-                    UserName = User.UserName
+                    UserName = User.UserName,
+                    RoleDescription = User.Role.Description
                 };
             }
 

@@ -40,6 +40,7 @@ namespace DDona.KrunkDS.WebApp.Infrastructure.Providers
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             identity.AddClaim(new Claim("UserName", UserViewModel.ResultObject.UserName));
             identity.AddClaim(new Claim("UserId", UserViewModel.ResultObject.Id.ToString()));
+            identity.AddClaim(new Claim(ClaimTypes.Role, UserViewModel.ResultObject.RoleDescription));
 
             var props = new AuthenticationProperties(new Dictionary<string, string>
             {
