@@ -17,6 +17,7 @@ namespace DDona.KrunkDS.WebApp
         {
             HttpConfiguration config = new HttpConfiguration();
             WebApiConfig.Register(config);
+            DependencyUnity.ConfigureDependency(config);
             ConfigureOAuth(app);
 
             app.UseWebApi(config);

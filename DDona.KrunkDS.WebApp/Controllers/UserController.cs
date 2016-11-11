@@ -14,11 +14,11 @@ namespace DDona.KrunkDS.WebApp.Controllers
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
-        private IUserService _userService = null;
+        private IUserService _userService;
 
-        public UserController()
+        public UserController(IUserService UserService)
         {
-            _userService = new UserService();
+            _userService = UserService;
         }
 
         #region GET
