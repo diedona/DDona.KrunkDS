@@ -14,6 +14,14 @@
         vm.working = false;
         vm.tabIndex = 0;
         vm.dataTable = {};
+        vm.showDetails = false;
+        vm.settings = undefined;
+
+        vm.showDetailsToCreate = showDetailsToCreate;
+        vm.showDetailsToEdit = showDetailsToEdit;
+        vm.cancel = cancel;
+        vm.submitForm = submitForm;
+        vm.confirmDelete = confirmDelete;
 
         vm.dtOptions = dtOptions();
         vm.dtColumns = dtColumns();
@@ -30,7 +38,74 @@
 
         //////////////////////////////////////////////////////////////////////////
 
+        function showDetailsToCreate() {
+            vm.settings = {};
+            vm.tabIndex = 1;
+            vm.showDetails = true;
+        }
 
+        function showDetailsToEdit(settings) {
+            vm.settings = settings;
+            vm.tabIndex = 1;
+            vm.showDetails = true;
+        }
+
+        function cancel() {
+            vm.settings = undefined;
+            vm.tabIndex = 0;
+            vm.showDetails = false;
+        }
+
+        function submitForm() {
+            if (vm.settings.Id === undefined) {
+                save();
+            } else {
+                update();
+            }
+        }
+
+        function save() {
+            vm.working = true;
+            SettingsService.saveSettings(vm.settings).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao salvar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados salvos com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            });
+        }
+
+        function update() {
+            vm.working = true;
+            SettingsService.updateSettings(vm.settings).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao atualizar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados atualizados com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            });
+        }
+
+        function confirmDelete() {
+            NotificationService.confirmDelete(deleteSettings);
+        }
+
+        function deleteSettings() {
+            vm.working = true;
+            SettingsService.deleteSettings(vm.settings.Id).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao deletar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados deletados com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            });
+        }
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -74,7 +149,7 @@
             $('td', nRow).unbind('click');
             $('td', nRow).bind('click', function () {
                 $scope.$apply(function () {
-                    //vm.showDetailsToEdit(aData);
+                    vm.showDetailsToEdit(aData);
                 });
             });
             return nRow;

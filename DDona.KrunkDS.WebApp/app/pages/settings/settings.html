@@ -53,22 +53,22 @@
                 </uib-tab>
 
                 <!-- DETAILS -->
-                <uib-tab index="1" ng-show="cupCtrl.showDetails">
+                <uib-tab index="1" ng-show="settingsCtrl.showDetails">
                     <uib-tab-heading>
                         Detalhes
                     </uib-tab-heading>
 
-                    <form novalidate angular-validator angular-validator-submit='cupCtrl.submitForm()' name='cupForm'>
+                    <form novalidate angular-validator angular-validator-submit='settingsCtrl.submitForm()' name='settingsForm'>
                         <div class="row">
                             <div class="col-sm-12 form-group text-left">
                                 <button class="btn btn-default"
-                                        ng-click="cupCtrl.cancel()"
+                                        ng-click="settingsCtrl.cancel()"
                                         type="button">
                                     <i class="fa fa-backward"></i> Cancelar
                                 </button>
                                 <button class="btn btn-danger"
-                                        ng-click="cupCtrl.confirmDelete()"
-                                        ng-disabled="cupCtrl.cup.Id === undefined"
+                                        ng-click="settingsCtrl.confirmDelete()"
+                                        ng-disabled="settingsCtrl.settings.Id === undefined"
                                         type="button">
                                     <i class="fa fa-trash-o"></i> Deletar
                                 </button>
@@ -87,35 +87,36 @@
                                     <input type="text"
                                            readonly
                                            ng-required="false"
-                                           ng-model="cupCtrl.cup.Id"
+                                           ng-model="settingsCtrl.settings.Id"
                                            class="form-control" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-4 form-group">
-                                    <label class="control-label">Descrição:</label>
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Módulo:</label>
                                     <input type="text"
-                                           name="Id"
+                                           name="Module"
                                            ng-required="true"
-                                           ng-model="cupCtrl.cup.Description"
+                                           ng-readonly="settingsCtrl.settings.Id !== undefined"
+                                           ng-model="settingsCtrl.settings.Module"
                                            class="form-control" />
                                 </div>
-                                <div class="col-sm-2 form-group">
-                                    <label class="control-label">Preço:</label>
+                                <div class="col-sm-3 form-group">
+                                    <label class="control-label">Chave:</label>
                                     <input type="text"
-                                           ui-number-mask="2"
-                                           name="Price"
+                                           name="Key"
                                            ng-required="true"
-                                           ng-model="cupCtrl.cup.Price"
+                                           ng-readonly="settingsCtrl.settings.Id !== undefined"
+                                           ng-model="settingsCtrl.settings.Key"
                                            class="form-control" />
                                 </div>
-                                <div class="col-sm-2 form-group">
-                                    <label class="control-label">Status:</label>
-                                    <br />
-                                    <div class="btn-group">
-                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="true">Ativo</label>
-                                        <label class="btn btn-default" ng-model="cupCtrl.cup.IsActive" uib-btn-radio="false">Inativo</label>
-                                    </div>
+                                <div class="col-sm-6 form-group">
+                                    <label class="control-label">Valor:</label>
+                                    <input type="text"
+                                           name="Value"
+                                           ng-required="true"
+                                           ng-model="settingsCtrl.settings.Value"
+                                           class="form-control" />
                                 </div>
                             </div>
                         </div>

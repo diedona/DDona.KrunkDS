@@ -23,6 +23,12 @@ namespace DDona.KrunkDS.WebApp.Controllers
 
         #region POST
         [HttpPost]
+        public IHttpActionResult Post(SettingsViewModel Model)
+        {
+            return Ok(_settingsService.SaveSettings(Model));
+        }
+
+        [HttpPost]
         [Route("DataTables")]
         public IHttpActionResult DataTables(DatatableViewModel Model)
         {
