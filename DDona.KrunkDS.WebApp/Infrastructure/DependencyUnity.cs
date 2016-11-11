@@ -14,6 +14,8 @@ namespace DDona.KrunkDS.WebApp.Infrastructure
         {
             UnityContainer container = new UnityContainer();
             container.RegisterType<IUserService, UserService>(new HierarchicalLifetimeManager());
+            container.RegisterType<ICupService, CupService>(new HierarchicalLifetimeManager());
+            container.RegisterType<ISettingsService, SettingsService>(new HierarchicalLifetimeManager());
 
             config.DependencyResolver = new UnityResolver(container);
         }

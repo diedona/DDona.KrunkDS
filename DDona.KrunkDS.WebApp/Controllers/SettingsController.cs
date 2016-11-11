@@ -14,11 +14,11 @@ namespace DDona.KrunkDS.WebApp.Controllers
     [RoutePrefix("api/Settings")]
     public class SettingsController : ApiController
     {
-        private ISettingsService _settingsService = null;
+        private ISettingsService _settingsService;
 
-        public SettingsController()
+        public SettingsController(ISettingsService SettingsService)
         {
-            _settingsService = new SettingsService();
+            _settingsService = SettingsService;
         }
 
         #region POST

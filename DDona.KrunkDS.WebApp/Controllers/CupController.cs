@@ -15,11 +15,11 @@ namespace DDona.KrunkDS.WebApp.Controllers
     [RoutePrefix("api/Cup")]
     public class CupController : ApiController
     {
-        private ICupService _cupService = null;
+        private ICupService _cupService;
 
-        public CupController()
+        public CupController(ICupService CupService)
         {
-            _cupService = new CupService();
+            _cupService = CupService;
         }
 
         #region GET
