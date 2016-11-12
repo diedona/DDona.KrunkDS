@@ -13,6 +13,7 @@
             'ng.httpLoader',
             'datatables',
             'datatables.options',
-            'ui.utils.masks'
+            'ui.utils.masks',
+            'ngFileUpload'
         ]);        
 }());
