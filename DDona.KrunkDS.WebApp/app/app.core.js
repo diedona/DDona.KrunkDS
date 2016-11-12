@@ -14,6 +14,7 @@
             'datatables',
             'datatables.options',
             'ui.utils.masks',
-            'ngFileUpload'
+            'ngFileUpload',
+            'ngImgCrop'
         ]);        
 }());

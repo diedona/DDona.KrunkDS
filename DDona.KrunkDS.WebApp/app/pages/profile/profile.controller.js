@@ -4,9 +4,11 @@
         .module('app')
         .controller('ProfileController', ProfileController);
 
-    ProfileController.$inject = ['AuthHelper', 'ProfileService', 'NotificationService'];
+    ProfileController.$inject = ['AuthHelper', 'ProfileService', 'NotificationService',
+        '$scope'];
 
-    function ProfileController(AuthHelper, ProfileService, NotificationService) {
+    function ProfileController(AuthHelper, ProfileService, NotificationService,
+        $scope) {
         var vm = this;
         vm.working = false;
         vm.profile = {};
@@ -28,6 +30,20 @@
                     vm.profile = d.ResultObject;
                 }
             });
+
+            //http://codepen.io/Crackeraki/pen/QjmNVM
+            angular.element(document.querySelector('#FilePicker')).on('change', handleFileSelect);
+        }
+
+        function handleFileSelect(evt) {
+            var file = evt.currentTarget.files[0];
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                $scope.$apply(function () {
+                    vm.profileImage = evt.target.result;
+                });
+            };
+            reader.readAsDataURL(file);
         }
 
         //////////////////////////////////////////////////////////////////////////

@@ -170,7 +170,7 @@
     <Content Include="app\services\notification.service.js" />
     <Content Include="app\services\profile.service.js" />
     <Content Include="app\services\user.service.js" />
-    <Content Include="css\angular\angular-ui-cropper.css" />
+    <Content Include="css\angular\angular-img-crop.css" />
     <Content Include="css\animate\animate.css" />
     <Content Include="css\bootstrap\cerulean-bootstrap.css" />
     <Content Include="css\custom\custom.styles.css" />
@@ -207,7 +207,7 @@
     <Content Include="app\app.config.js" />
     <Content Include="app\app.core.js" />
     <Content Include="app\app.js" />
-    <Content Include="scripts\angular\angular-ui-cropper.js" />
+    <Content Include="scripts\angular\angular-img-crop.js" />
     <Content Include="scripts\bootstrap\bootstrap.js" />
     <Content Include="scripts\datatables\dataTables.bootstrap.js" />
     <Content Include="scripts\datatables\datatables.js" />

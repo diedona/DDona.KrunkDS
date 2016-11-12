@@ -47,6 +47,12 @@ body {
 }
 
 .table > tbody > tr > td {
-    cursor: pointer; 
+    cursor: pointer;
     cursor: hand;
+}
+
+.cropArea {
+    overflow: hidden;
+    width: 300px;
+    height: 150px;
 }

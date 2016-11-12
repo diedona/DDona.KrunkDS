@@ -10,6 +10,8 @@
 
     <div class="row">
 
+        <!--{{profileCtrl.profile}}-->
+
         <!-- NORMAL DATA -->
         <div class="col-sm-8">
             <div class="well">
@@ -46,16 +48,16 @@
                         <label class="control-label">Status:</label>
                         <br />
                         <div class="btn-group">
-                            <label class="btn btn-default" 
-                                   ng-disabled="true" 
-                                   ng-model="profileCtrl.profile.IsActive" 
+                            <label class="btn btn-default"
+                                   ng-disabled="true"
+                                   ng-model="profileCtrl.profile.IsActive"
                                    uib-btn-radio="true">
                                 Ativo
                             </label>
 
-                            <label class="btn btn-default" 
-                                   ng-disabled="true" 
-                                   ng-model="profileCtrl.profile.IsActive" 
+                            <label class="btn btn-default"
+                                   ng-disabled="true"
+                                   ng-model="profileCtrl.profile.IsActive"
                                    uib-btn-radio="false">
                                 Inativo
                             </label>
@@ -65,15 +67,15 @@
                         <label class="control-label">Recebe Notificações:</label>
                         <br />
                         <div class="btn-group">
-                            <label class="btn btn-default" 
-                                   ng-model="profileCtrl.profile.ReceiveNotification" 
+                            <label class="btn btn-default"
+                                   ng-model="profileCtrl.profile.ReceiveNotification"
                                    ng-change="profileCtrl.changeNotification()"
                                    uib-btn-radio="true">
                                 Sim
                             </label>
 
-                            <label class="btn btn-default" 
-                                   ng-model="profileCtrl.profile.ReceiveNotification" 
+                            <label class="btn btn-default"
+                                   ng-model="profileCtrl.profile.ReceiveNotification"
                                    ng-change="profileCtrl.changeNotification()"
                                    uib-btn-radio="false">
                                 Não
@@ -97,9 +99,29 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <button ngf-select ng-model="picFile" accept="image/*">
-                        Select Picture
-                    </button>
+                    <label class="btn btn-primary"
+                           for="FilePicker">
+                        <input type="file"
+                               ng-show="false"
+                               id="FilePicker"
+                               accept="image/*" />
+                        Upload
+                    </label>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="cropArea">
+                        <img-crop image="profileCtrl.profileImage"
+                                  area-type="square"
+                                  result-image="profileCtrl.profile.myCroppedImage"
+                                  ng-init="profileCtrl.profile.myCroppedImage = ''"
+                                  result-image-size="'max'">
+                        </img-crop>
+                    </div>
                 </div>
             </div>
 

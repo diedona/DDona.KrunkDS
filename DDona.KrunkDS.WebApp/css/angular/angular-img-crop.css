@@ -1,37 +1,37 @@
-/* line 1, ../../source/scss/ui-cropper.scss */
-ui-cropper {
+﻿/* line 1, ../../source/scss/ng-img-crop.scss */
+img-crop {
   width: 100%;
   display: block;
 }
-/* line 3, ../../source/scss/ui-cropper.scss */
-ui-cropper.fixed-height {
+/* line 3, ../../source/scss/ng-img-crop.scss */
+img-crop.fixed-height {
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-/* line 7, ../../source/scss/ui-cropper.scss */
-ui-cropper.fixed-height canvas {
+/* line 7, ../../source/scss/ng-img-crop.scss */
+img-crop.fixed-height canvas {
   display: block;
   position: absolute;
   top: 50%;
   left: 50%;
 }
-/* line 14, ../../source/scss/ui-cropper.scss */
-ui-cropper.full-width {
+/* line 14, ../../source/scss/ng-img-crop.scss */
+img-crop.full-width {
   text-align: center;
 }
-/* line 16, ../../source/scss/ui-cropper.scss */
-ui-cropper.full-width canvas {
+/* line 16, ../../source/scss/ng-img-crop.scss */
+img-crop.full-width canvas {
   display: inline;
 }
-/* line 22, ../../source/scss/ui-cropper.scss */
-ui-cropper canvas {
+/* line 22, ../../source/scss/ng-img-crop.scss */
+img-crop canvas {
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   /* mobile webkit */
 }
-/* line 28, ../../source/scss/ui-cropper.scss */
-ui-cropper .loading {
+/* line 28, ../../source/scss/ng-img-crop.scss */
+img-crop .loading {
   width: 100%;
   font-size: 16px;
   font-weight: bold;
@@ -50,8 +50,8 @@ ui-cropper .loading {
   color: white;
   background-color: rgba(0, 0, 0, 0.75);
 }
-/* line 29, ../../source/scss/ui-cropper.scss */
-ui-cropper .loading .fixed-height {
+/* line 29, ../../source/scss/ng-img-crop.scss */
+img-crop .loading .fixed-height {
   height: 100%;
   position: absolute;
 }
