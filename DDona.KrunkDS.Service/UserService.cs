@@ -89,7 +89,9 @@ namespace DDona.KrunkDS.Service
 
             using (KrunkContext _db = new KrunkContext())
             {
-                IQueryable<User> User = _db.User.AsQueryable();
+                IQueryable<User> User = _db.User
+                    .Include(x => x.Role)
+                    .AsQueryable();
 
                 recordsTotal = User.Count();
 
@@ -117,7 +119,10 @@ namespace DDona.KrunkDS.Service
                     Email = x.Email,
                     IsActive = x.IsActive,
                     UserName = x.UserName,
-                    Id = x.Id
+                    Id = x.Id,
+                    ReceiveNotification = x.ReceiveNotification,
+                    RoleDescription = x.Role.Description,
+                    RoleId = x.RoleId
                 }).ToArray();
             }
 

@@ -11,6 +11,8 @@
         <div class="col-md-12">
 
             <uib-tabset active="userCtrl.tabIndex">
+
+                <!-- LISTAGEM -->
                 <uib-tab index="0">
                     <uib-tab-heading>
                         Listagem
@@ -32,6 +34,14 @@
                                     <i class="fa fa-search"></i> Buscar
                                 </button>
                             </div>
+                            <div class="col-sm-2 form-group">
+                                <label class="control-label">&nbsp;</label>
+                                <button class="btn btn-success form-control"
+                                        type="button"
+                                        ng-click="userCtrl.showDetailsToCreate()">
+                                    <i class="fa fa-plus-circle"></i> Novo
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -42,12 +52,96 @@
                            dt-instance="userCtrl.dataTable"></table>
 
                 </uib-tab>
+
+                <!-- DETALHES -->
                 <uib-tab index="1" ng-show="userCtrl.showDetails">
                     <uib-tab-heading>
                         Detalhes
                     </uib-tab-heading>
 
-                    Other content
+                    <form novalidate angular-validator angular-validator-submit='userCtrl.submitForm()' name='userForm'>
+                        <div class="row">
+                            <div class="col-sm-12 form-group text-left">
+                                <button class="btn btn-default"
+                                        ng-click="userCtrl.cancel()"
+                                        type="button">
+                                    <i class="fa fa-backward"></i> Cancelar
+                                </button>
+                                <button class="btn btn-danger"
+                                        ng-click="userCtrl.confirmDelete()"
+                                        ng-disabled="cupCtrl.cup.Id === undefined"
+                                        type="button">
+                                    <i class="fa fa-trash-o"></i> Deletar
+                                </button>
+                                <button class="btn btn-success"
+                                        type="submit">
+                                    <i class="fa fa-save"></i> Salvar
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="well">
+
+                            <div class="row">
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Id:</label>
+                                    <input type="text"
+                                           readonly
+                                           ng-required="false"
+                                           ng-model="userCtrl.user.Id"
+                                           class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Nome de Usuário:</label>
+                                    <input type="text"
+                                           name="UserName"
+                                           ng-readonly="userCtrl.user.Id !== undefined"
+                                           ng-required="true"
+                                           ng-model="userCtrl.user.UserName"
+                                           class="form-control" />
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Email:</label>
+                                    <input type="email"
+                                           name="UserName"
+                                           ng-required="true"
+                                           ng-model="userCtrl.user.Email"
+                                           class="form-control" />
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label class="control-label">Grupo:</label>
+                                    <select class="form-control"
+                                            ng-model="userCtrl.user.RoleId"
+                                            ng-options="role.Id as role.Description for role in userCtrl.roles"
+                                            ng-required="true">
+                                        <option value="">Selecione</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Status:</label>
+                                    <br />
+                                    <div class="btn-group">
+                                        <label class="btn btn-default" ng-model="userCtrl.user.IsActive" uib-btn-radio="true">Ativo</label>
+                                        <label class="btn btn-default" ng-model="userCtrl.user.IsActive" uib-btn-radio="false">Inativo</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 form-group">
+                                    <label class="control-label">Recebe Notificação:</label>
+                                    <br />
+                                    <div class="btn-group">
+                                        <label class="btn btn-default" ng-model="userCtrl.user.ReceiveNotification" uib-btn-radio="true">Sim</label>
+                                        <label class="btn btn-default" ng-model="userCtrl.user.ReceiveNotification" uib-btn-radio="false">Não</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
                 </uib-tab>
             </uib-tabset>
 
