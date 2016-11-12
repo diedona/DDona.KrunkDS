@@ -110,7 +110,6 @@
                     deferred.reject();
                 } else {
                     //CHECK FOR TOKEN VALIDITY
-                    console.log('oh');
                     LoginService.validateToken().then(function (d) {
                         if (d === undefined || d.Success == false) {
                             $state.go('login');
