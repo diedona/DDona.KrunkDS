@@ -30,6 +30,7 @@
 
         function responseError(rejection) {
             if (rejection.status === 401) {
+                AuthHelper.cleanAuthentication();
                 $location.path('login');
             }
             return $q.reject(rejection);

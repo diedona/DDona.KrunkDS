@@ -19,7 +19,8 @@
         var service = {
             login: login,
             logout: logout,
-            fillAuthData: fillAuthData
+            fillAuthData: fillAuthData,
+            validateToken: validateToken
         };
 
         return service;
@@ -62,6 +63,15 @@
                 authData.IsAuth = true;
                 authentication = authData;
             }
+        }
+
+        function validateToken() {
+            var promise = null;
+            promise = $http.get(SettingsHelper.BaseUrl + 'api/Ping').then(
+                function (response) { return response.data;},
+                function (err) { console.log(err); return undefined}
+            );
+            return promise;
         }
     }
 }());

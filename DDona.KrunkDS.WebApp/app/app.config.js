@@ -41,36 +41,54 @@
         .state('app.home', {
             url: '/home',
             templateUrl: 'app/pages/home/home.html',
-            controller: 'HomeController as homeCtrl'
+            controller: 'HomeController as homeCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
         .state('app.help', {
             url: '/help',
             templateUrl: 'app/pages/help/help.html',
-            controller: 'HelpController as helpCtrl'
+            controller: 'HelpController as helpCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
         .state('app.usuarios', {
             url: '/usuarios',
             templateUrl: 'app/pages/user/user.html',
-            controller: 'UserController as userCtrl'
+            controller: 'UserController as userCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
         .state('app.copos', {
             url: '/copos',
             templateUrl: 'app/pages/cup/cup.html',
-            controller: 'CupController as cupCtrl'
+            controller: 'CupController as cupCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
         .state('app.profile', {
             url: '/profile',
             templateUrl: 'app/pages/profile/profile.html',
-            controller: 'ProfileController as profileCtrl'
+            controller: 'ProfileController as profileCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
         .state('app.settings', {
             url: '/settings',
             templateUrl: 'app/pages/settings/settings.html',
-            controller: 'SettingsController as settingsCtrl'
+            controller: 'SettingsController as settingsCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
         })
 
-        isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper'];
-        function isLoggedIn($q, $timeout, $state, AuthHelper) {
+        isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper', 'LoginService'];
+        function isLoggedIn($q, $timeout, $state, AuthHelper, LoginService) {
             var deferred = $q.defer();
 
             //http://stackoverflow.com/questions/29811045/how-to-redirect-in-a-ui-router-resolve
@@ -83,8 +101,16 @@
                     $state.go('login');
                     deferred.reject();
                 } else {
-                    // everything is fine, proceed
-                    deferred.resolve();
+                    //CHECK FOR TOKEN VALIDITY
+                    console.log('oh');
+                    LoginService.validateToken().then(function (d) {
+                        if (d === undefined || d.Success == false) {
+                            $state.go('login');
+                            deferred.reject();
+                        } else {
+                            deferred.resolve();
+                        }
+                    });
                 }
             });
 
