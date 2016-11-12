@@ -45,7 +45,7 @@ namespace DDona.KrunkDS.WebApp.Infrastructure.Providers
             var props = new AuthenticationProperties(new Dictionary<string, string>
             {
                 {"UserName", UserViewModel.ResultObject.UserName },
-                {"UserId", UserViewModel.ResultObject.Id.ToString() }
+                {"UserRole", UserViewModel.ResultObject.RoleDescription }
             });
 
             var ticket = new AuthenticationTicket(identity, props);
@@ -55,7 +55,7 @@ namespace DDona.KrunkDS.WebApp.Infrastructure.Providers
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
         {
-            string[] Keys = { "access_token", "UserName", "UserId" };
+            string[] Keys = { "access_token", "UserName", "UserRole" };
 
             foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
             {

@@ -9,7 +9,7 @@
     function LoginService($http, $q, SettingsHelper, AuthHelper) {
         var defaultAuth = {
             UserName: "",
-            UserId: 0,
+            UserRole: "",
             Token: "",
             IsAuth: false
         };
@@ -37,7 +37,7 @@
                     authentication = { 
                         Token: response.access_token, 
                         UserName: response.UserName,
-                        UserId: response.UserId,
+                        UserRole: response.UserRole,
                         IsAuth: true
                     };
 
