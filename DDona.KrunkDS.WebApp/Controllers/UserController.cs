@@ -1,5 +1,6 @@
 ﻿using DDona.KrunkDS.Service;
 using DDona.KrunkDS.ViewModel.Base.DataTables;
+using DDona.KrunkDS.ViewModel.User;
 using DDona.KrunkDS.WebApp.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -38,15 +39,36 @@ namespace DDona.KrunkDS.WebApp.Controllers
         {
             return Ok(_userService.GetUsers(Model));
         }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpPost]
+        public IHttpActionResult Post(UserViewModel Model)
+        {
+            return Ok(_userService.SaveUser(Model));
+        }
         #endregion
 
         #region PUT
+        [HttpPut]
+        public IHttpActionResult Put(UserViewModel Model)
+        {
+            return Ok(_userService.UpdateUser(Model));
+        }
+
         [HttpPut]
         [Route("UpdateReceiveNotification")]
         public IHttpActionResult UpdateReceiveNotification(bool Status)
         {
             int Id = new ClaimDataManager(User).GetUserId();
             return Ok(_userService.UpdateReceiveNotification(Id, Status));
+        }
+        #endregion
+
+        #region DELETE
+        [HttpDelete]
+        public IHttpActionResult Delete(int Id)
+        {
+            return Ok(_userService.DeleteUser(Id));
         }
         #endregion
     }

@@ -5,10 +5,10 @@
         .controller('UserController', UserController);
 
     UserController.$inject = ['SettingsHelper', 'DTOptionsBuilder', 'DTColumnBuilder',
-        'AuthHelper', '$compile', '$scope', 'RoleService', 'NotificationService'];
+        'AuthHelper', '$compile', '$scope', 'RoleService', 'NotificationService', 'UserService'];
 
     function UserController(SettingsHelper, DTOptionsBuilder, DTColumnBuilder,
-        AuthHelper, $compile, $scope, RoleService, NotificationService) {
+        AuthHelper, $compile, $scope, RoleService, NotificationService, UserService) {
         var vm = this;
         vm.working = false;
         vm.tabIndex = 0;
@@ -22,6 +22,8 @@
         vm.cancel = cancel;
         vm.showDetailsToCreate = showDetailsToCreate;
         vm.showDetailsToEdit = showDetailsToEdit;
+        vm.submitForm = submitForm;
+        vm.confirmDelete = confirmDelete;
 
         vm.dtOptions = dtOptions();
         vm.dtColumns = dtColumns();
@@ -67,6 +69,60 @@
             vm.tabIndex = 1;
             vm.showDetails = true;
             vm.user = user;
+        }
+
+        function submitForm() {
+            if (vm.user.Id === undefined) {
+                save();
+            } else {
+                update();
+            }
+        }
+
+        function save() {
+            vm.working = true;
+            UserService.saveUser(vm.user).then(function (d) {
+                vm.working = false;
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao salvar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados salvos com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            })
+        }
+
+        function update() {
+            vm.working = true;
+            UserService.updateUser(vm.user).then(function (d) {
+                vm.working = false;
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao atualizar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados atualizados com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            })
+        }
+
+        function confirmDelete() {
+            NotificationService.confirmDelete(deleteUser);
+        }
+
+        function deleteUser() {
+            vm.working = true;
+            UserService.updateUser(vm.user.Id).then(function (d) {
+                vm.working = false;
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao deletar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados deletados com sucesso');
+                    vm.cancel();
+                    vm.dataTable.reloadData(function () { }, false);
+                }
+            })
         }
 
         //////////////////////////////////////////////////////////////////////////

@@ -11,5 +11,8 @@ namespace DDona.KrunkDS.Service
         DatatableReturnViewModel<UserViewModel> GetUsers(DatatableViewModel Model);
         SingleResultViewModel<UserViewModel> GetById(int Id);
         SingleResultViewModel<bool> UpdateReceiveNotification(int Id, bool Status);
+        SingleResultViewModel<bool> SaveUser(UserViewModel Model);
+        SingleResultViewModel<bool> UpdateUser(UserViewModel Model);
+        SingleResultViewModel<bool> DeleteUser(int Id);
     }
 }

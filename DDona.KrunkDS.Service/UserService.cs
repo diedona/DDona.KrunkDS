@@ -195,5 +195,41 @@ namespace DDona.KrunkDS.Service
 
             return Result;
         }
+
+        public SingleResultViewModel<bool> SaveUser(UserViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> UpdateUser(UserViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<bool> DeleteUser(int Id)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+
+            }
+
+            return Result;
+        }
     }
 }
