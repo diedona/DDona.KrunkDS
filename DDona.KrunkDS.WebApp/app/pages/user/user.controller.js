@@ -99,7 +99,9 @@
             $('td', nRow).unbind('click');
             $('td', nRow).bind('click', function () {
                 $scope.$apply(function () {
-                    vm.showDetailsToEdit(aData);
+                    //avoiding mixing grid
+                    var aDataCopy = JSON.parse(JSON.stringify(aData))
+                    vm.showDetailsToEdit(aDataCopy);
                 });
             });
             return nRow;
