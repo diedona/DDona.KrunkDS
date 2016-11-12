@@ -113,7 +113,7 @@
 
         function deleteUser() {
             vm.working = true;
-            UserService.updateUser(vm.user.Id).then(function (d) {
+            UserService.deleteUser(vm.user.Id).then(function (d) {
                 vm.working = false;
                 if (d === undefined || d.Success == false) {
                     NotificationService.error('Erro', 'Falha ao deletar dados');

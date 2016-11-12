@@ -153,13 +153,13 @@ namespace DDona.KrunkDS.Service
             return Result;
         }
 
-        public ListResultViewModel<SettingsViewModel> GetById(int Id)
+        public SingleResultViewModel<SettingsViewModel> GetById(int Id)
         {
-            ListResultViewModel<SettingsViewModel> Result = new ListResultViewModel<SettingsViewModel>();
+            SingleResultViewModel<SettingsViewModel> Result = new SingleResultViewModel<SettingsViewModel>();
 
             using (KrunkContext _db = new KrunkContext())
             {
-                Result.ResultObjectList = _db.Settings
+                Result.ResultObject = _db.Settings
                     .Where(x => x.Id == Id)
                     .Select(x => new SettingsViewModel
                     {
@@ -168,7 +168,27 @@ namespace DDona.KrunkDS.Service
                         Key = x.Key,
                         Value = x.Value,
                         Module = x.Module,
-                    }).ToList();
+                    }).FirstOrDefault();
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<SettingsViewModel> GetByModuleKey(string Module, string Key)
+        {
+            SingleResultViewModel<SettingsViewModel> Result = new SingleResultViewModel<SettingsViewModel>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                Result.ResultObject = _db.Settings
+                    .Where(x => x.Module.Equals(Module) && x.Key.Equals(Key))
+                    .Select(x => new SettingsViewModel
+                    {
+                        Id = x.Id,
+                        Key = x.Key,
+                        Module = x.Module,
+                        Value = x.Value
+                    }).FirstOrDefault();
             }
 
             return Result;

@@ -1,7 +1,9 @@
-﻿using DDona.KrunkDS.WebApp.Infrastructure;
+﻿using DDona.KrunkDS.Service;
+using DDona.KrunkDS.WebApp.Infrastructure;
 using DDona.KrunkDS.WebApp.Infrastructure.Providers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -31,7 +33,7 @@ namespace DDona.KrunkDS.WebApp
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new SimpleAuthorizationServerProvider()
+                Provider = new SimpleAuthorizationServerProvider(new UserService(new SettingsService()))
             };
 
             // Token Generation

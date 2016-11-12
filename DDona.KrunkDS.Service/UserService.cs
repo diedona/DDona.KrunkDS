@@ -10,11 +10,19 @@ using System.Linq.Dynamic;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
+using DDona.KrunkDS.ViewModel.Settings;
 
 namespace DDona.KrunkDS.Service
 {
     public class UserService : IUserService
     {
+        private ISettingsService _settingsService;
+
+        public UserService(ISettingsService SettingsService)
+        {
+            _settingsService = SettingsService;
+        }
+
         public SingleResultViewModel<UserViewModel> CreateUser(UserViewModel Model)
         {
             SingleResultViewModel<UserViewModel> Result = new SingleResultViewModel<UserViewModel>();
@@ -200,9 +208,37 @@ namespace DDona.KrunkDS.Service
         {
             SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
 
+            SettingsViewModel DefaultPassword = _settingsService.GetByModuleKey("User", "DefaultPassword").ResultObject;
+
+            if(DefaultPassword == null)
+            {
+                Result.Success = false;
+                Result.Messages.Add("Adicione a configuração 'DefaultPassword' ao sistema");
+                return Result;
+            }
+                
             using (KrunkContext _db = new KrunkContext())
             {
+                User User = new User()
+                {
+                    Email = Model.Email,
+                    IsActive = Model.IsActive,
+                    ReceiveNotification = Model.ReceiveNotification,
+                    RoleId = Model.RoleId,
+                    UserName = Model.UserName,
+                    Password = Encryption.CreateHash(DefaultPassword.Value)
+                };
 
+                try
+                {
+                    _db.User.Add(User);
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
             }
 
             return Result;
@@ -214,7 +250,29 @@ namespace DDona.KrunkDS.Service
 
             using (KrunkContext _db = new KrunkContext())
             {
+                User User = _db.User.Where(x => x.Id == Model.Id).FirstOrDefault();
 
+                if(User == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não encontrado");
+                    return Result;
+                }
+
+                User.Email = Model.Email;
+                User.RoleId = Model.RoleId;
+                User.IsActive = Model.IsActive;
+                User.ReceiveNotification = Model.ReceiveNotification;
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
             }
 
             return Result;
@@ -226,7 +284,25 @@ namespace DDona.KrunkDS.Service
 
             using (KrunkContext _db = new KrunkContext())
             {
+                User User = _db.User.Where(x => x.Id == Id).FirstOrDefault();
 
+                if (User == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não encontrado");
+                    return Result;
+                }
+
+                try
+                {
+                    _db.User.Remove(User);
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
             }
 
             return Result;

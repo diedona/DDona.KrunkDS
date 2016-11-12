@@ -7,9 +7,10 @@ namespace DDona.KrunkDS.Service
     public interface ISettingsService
     {
         SingleResultViewModel<bool> DeleteSettings(int Id);
-        ListResultViewModel<SettingsViewModel> GetById(int Id);
+        SingleResultViewModel<SettingsViewModel> GetById(int Id);
         DatatableReturnViewModel<SettingsViewModel> GetSettings(DatatableViewModel Model);
         SingleResultViewModel<bool> SaveSettings(SettingsViewModel Model);
         SingleResultViewModel<bool> UpdateSettings(SettingsViewModel Model);
+        SingleResultViewModel<SettingsViewModel> GetByModuleKey(string Module, string Key);
     }
 }

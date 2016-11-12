@@ -15,9 +15,9 @@ namespace DDona.KrunkDS.WebApp.Infrastructure.Providers
     {
         private IUserService _userService = null;
 
-        public SimpleAuthorizationServerProvider()
+        public SimpleAuthorizationServerProvider(IUserService UserService)
         {
-            _userService = new UserService();
+            _userService = UserService;
         }
 
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
