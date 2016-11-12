@@ -31,6 +31,7 @@ namespace DDona.KrunkDS.WebApp.Controllers
         #endregion
 
         #region POST
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         [Route("DataTables")]
         public IHttpActionResult DataTables(DatatableViewModel Model)
