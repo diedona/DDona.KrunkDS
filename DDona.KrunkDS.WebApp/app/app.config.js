@@ -86,6 +86,14 @@
                 isLoggedIn: isLoggedIn
             }
         })
+        .state('app.role', {
+            url: '/grupos',
+            templateUrl: 'app/pages/role/role.html',
+            controller: 'RoleController as roleCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
+        })
 
         isLoggedIn.$inject = ['$q', '$timeout', '$state', 'AuthHelper', 'LoginService'];
         function isLoggedIn($q, $timeout, $state, AuthHelper, LoginService) {

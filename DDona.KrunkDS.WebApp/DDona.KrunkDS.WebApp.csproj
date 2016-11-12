@@ -157,10 +157,13 @@
     <Content Include="app\pages\logout\logout.controller.js" />
     <Content Include="app\pages\profile\profile.controller.js" />
     <Content Include="app\pages\profile\profile.html" />
+    <Content Include="app\pages\role\role.controller.js" />
+    <Content Include="app\pages\role\role.html" />
     <Content Include="app\pages\settings\settings.controller.js" />
     <Content Include="app\pages\settings\settings.html" />
     <Content Include="app\pages\user\user.controller.js" />
     <Content Include="app\pages\user\user.html" />
+    <Content Include="app\services\role.service.js" />
     <Content Include="app\services\settings.service.js" />
     <Content Include="app\services\cup.service.js" />
     <Content Include="app\services\login.service.js" />

@@ -23,6 +23,9 @@
                         <li ng-if="mainCtrl.authentication.UserRole == 'Administrador'">
                             <a href="#" ui-sref="app.usuarios">Usuários</a>
                         </li>
+                        <li ng-if="mainCtrl.authentication.UserRole == 'Administrador'">
+                            <a href="#" ui-sref="app.role">Grupos</a>
+                        </li>
                         <li><a href="#" ui-sref="app.copos">Copos</a></li>
                         <li><a href="#" ui-sref="app.acompanhamentos">Acompanhamentos</a></li>
                     </ul>
