@@ -12,6 +12,7 @@
         var vm = this;
         vm.working = false;
         vm.profile = {};
+        vm.showUpdateImg = false;
 
         vm.changeNotification = changeNotification;
 

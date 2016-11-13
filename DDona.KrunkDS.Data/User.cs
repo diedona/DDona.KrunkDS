@@ -24,6 +24,7 @@ namespace DDona.KrunkDS.Data
         public bool ReceiveNotification { get; set; } // ReceiveNotification
         public bool IsActive { get; set; } // IsActive
         public int RoleId { get; set; } // RoleId
+        public string ProfilePicture { get; set; } // ProfilePicture (length: 80)
 
         // Foreign keys
         public virtual Role Role { get; set; } // FK_User_Role

@@ -11,6 +11,7 @@ using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DDona.KrunkDS.ViewModel.Settings;
+using DDona.KrunkDS.Util.Blob;
 
 namespace DDona.KrunkDS.Service
 {
@@ -164,8 +165,13 @@ namespace DDona.KrunkDS.Service
                     Id = User.Id,
                     ReceiveNotification = User.ReceiveNotification,
                     UserName = User.UserName,
-                    IsActive = User.IsActive
+                    IsActive = User.IsActive,
+                    ProfilePicture = User.ProfilePicture
                 };
+
+                BlobHelper BlobHelper = new BlobHelper();
+                byte[] PhotoAr = BlobHelper.GetProfilePicture(Result.ResultObject.ProfilePicture);
+                Result.ResultObject.ProfilePictureBase64 = Convert.ToBase64String(PhotoAr);
             }
 
             return Result;

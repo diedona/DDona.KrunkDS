@@ -97,35 +97,44 @@
         <!-- PHOTO -->
         <div class="col-sm-4">
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <label class="btn btn-primary"
-                           for="FilePicker">
-                        <input type="file"
-                               ng-show="false"
-                               id="FilePicker"
-                               accept="image/*" />
-                        Upload
-                    </label>
-                </div>
+            <div ng-show="profileCtrl.showUpdateImg == false">
+                <img class="img-responsive img-circle center-block" ng-src="data:image/jpg;base64,{{profileCtrl.profile.ProfilePictureBase64}}" />
             </div>
 
-            <br />
+            <div ng-show="profileCtrl.showUpdateImg">
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="cropArea">
-                        <img-crop image="profileCtrl.profileImage"
-                                  area-type="square"
-                                  result-image="profileCtrl.profile.myCroppedImage"
-                                  ng-init="profileCtrl.profile.myCroppedImage = ''"
-                                  result-image-size="'max'">
-                        </img-crop>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="btn btn-primary"
+                               for="FilePicker">
+                            <input type="file"
+                                   ng-show="false"
+                                   id="FilePicker"
+                                   accept="image/*" />
+                            Upload
+                        </label>
                     </div>
                 </div>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="cropArea">
+                            <img-crop image="profileCtrl.profileImage"
+                                      area-type="square"
+                                      result-image="profileCtrl.profile.myCroppedImage"
+                                      ng-init="profileCtrl.profile.myCroppedImage = ''"
+                                      result-image-size="'max'">
+                            </img-crop>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
+
     </div>
 
 </div>

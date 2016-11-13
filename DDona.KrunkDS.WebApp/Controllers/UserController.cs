@@ -49,6 +49,7 @@ namespace DDona.KrunkDS.WebApp.Controllers
         #endregion
 
         #region PUT
+        [Authorize(Roles = "Administrador")]
         [HttpPut]
         public IHttpActionResult Put(UserViewModel Model)
         {
@@ -65,6 +66,7 @@ namespace DDona.KrunkDS.WebApp.Controllers
         #endregion
 
         #region DELETE
+        [Authorize(Roles = "Administrador")]
         [HttpDelete]
         public IHttpActionResult Delete(int Id)
         {

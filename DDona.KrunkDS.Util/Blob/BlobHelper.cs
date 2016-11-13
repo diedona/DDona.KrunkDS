@@ -21,11 +21,13 @@ namespace DDona.KrunkDS.Util.Blob
 
         public List<string> Errors { get; set; }
 
-        public BlobHelper()
+        public BlobHelper() : this("krunkds") { }
+
+        public BlobHelper(string ContainerName)
         {
             _storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
             _blobClient = _storageAccount.CreateCloudBlobClient();
-            _container = _blobClient.GetContainerReference("krunkds");
+            _container = _blobClient.GetContainerReference(ContainerName);
         }
 
         public bool UploadBlob(byte[] File, string FileName)
@@ -40,6 +42,27 @@ namespace DDona.KrunkDS.Util.Blob
                 Errors.Add(ex.Message);
                 return false;
             }
+        }
+
+        public byte[] GetBlob(string FileName)
+        {
+            CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
+            blockBlob.FetchAttributes();
+
+            byte[] bytes = new byte[blockBlob.Properties.Length];
+
+            blockBlob.DownloadRangeToByteArray(bytes, 0, 0, blockBlob.Properties.Length);
+            return bytes;
+        }
+
+        public byte[] GetProfilePicture(string FileName)
+        {
+            if(string.IsNullOrEmpty(FileName))
+            {
+                FileName = "avatar.jpg";
+            }
+
+            return this.GetBlob(FileName);
         }
     }
 }

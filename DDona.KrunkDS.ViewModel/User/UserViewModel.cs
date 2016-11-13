@@ -16,6 +16,8 @@ namespace DDona.KrunkDS.ViewModel.User
         public bool IsActive { get; set; }
         public int RoleId { get; set; }
         public string RoleDescription { get; set; }
+        public string ProfilePicture { get; set; }
+        public string ProfilePictureBase64 { get; set; }
         public string Actions { get; set; }
     }
 }

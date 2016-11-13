@@ -34,6 +34,7 @@ namespace DDona.KrunkDS.Data
             Property(x => x.ReceiveNotification).HasColumnName(@"ReceiveNotification").IsRequired().HasColumnType("bit");
             Property(x => x.IsActive).HasColumnName(@"IsActive").IsRequired().HasColumnType("bit");
             Property(x => x.RoleId).HasColumnName(@"RoleId").IsRequired().HasColumnType("int");
+            Property(x => x.ProfilePicture).HasColumnName(@"ProfilePicture").IsOptional().IsUnicode(false).HasColumnType("varchar").HasMaxLength(80);
 
             // Foreign keys
             HasRequired(a => a.Role).WithMany(b => b.User).HasForeignKey(c => c.RoleId).WillCascadeOnDelete(false); // FK_User_Role

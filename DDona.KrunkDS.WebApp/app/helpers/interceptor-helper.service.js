@@ -6,7 +6,7 @@
 
     InterceptorHelper.$inject = ['$location', '$q', 'AuthHelper'];
 
-    function InterceptorHelper($state, $q, AuthHelper) {
+    function InterceptorHelper($location, $q, AuthHelper) {
         var helper = {
             request: request,
             responseError: responseError
