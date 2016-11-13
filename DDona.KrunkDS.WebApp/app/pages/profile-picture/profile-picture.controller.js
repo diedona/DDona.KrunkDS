@@ -12,8 +12,10 @@
         var vm = this;
         vm.working = false;
         vm.profileImage = '';
+        vm.Image = {};
 
         vm.closeModal = closeModal;
+        vm.acceptCrop = acceptCrop;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -22,10 +24,7 @@
         //////////////////////////////////////////////////////////////////////////
 
         function activate() {
-            ////http://codepen.io/Crackeraki/pen/QjmNVM
-            //var FilePicker = document.querySelector('#FilePicker');
-            //console.log(FilePicker);
-            //angular.element(FilePicker).on('change', handleFileSelect);
+            vm.Image.myCroppedImage = undefined;
         }
 
         //function handleFileSelect(evt) {
@@ -44,6 +43,10 @@
 
         function closeModal() {
             $uibModalInstance.close(undefined);
+        }
+
+        function acceptCrop() {
+
         }
 
     }

@@ -18,7 +18,6 @@
                 <img-crop image="profilePictureCtrl.Image.profileImage"
                           area-type="square"
                           result-image="profilePictureCtrl.Image.myCroppedImage"
-                          ng-init="profilePictureCtrl.Image.myCroppedImage = ''"
                           result-image-size="'max'">
                 </img-crop>
             </div>
@@ -37,4 +36,10 @@
                accept="image/*" />
         Upload
     </label>
+    <button class="btn btn-success"
+            ng-show="profilePictureCtrl.Image.profileImage !== undefined"
+            type="button"
+            ng-click="profilePictureCtrl.acceptCrop()">
+        Salvar
+    </button>
 </div>
