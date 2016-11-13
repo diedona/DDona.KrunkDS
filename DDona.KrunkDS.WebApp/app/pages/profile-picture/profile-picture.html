@@ -1,27 +1,38 @@
-﻿<div class="row">
-    <div class="col-sm-4">
-        <label class="btn btn-primary"
-               for="FilePicker">
-            <input type="file"
-                   ng-show="false"
-                   id="FilePicker"
-                   accept="image/*" />
-            Upload
-        </label>
-    </div>
+﻿<div class="modal-header">
+
+    <span class="pull-right">
+        <button type="button"
+                ng-click="profilePictureCtrl.closeModal()"
+                class="btn btn-link">
+            <i class="fa fa-close"></i>
+        </button>
+    </span>
+    <h3 class="modal-title" id="modal-title">Trocar foto de perfil</h3>
+
 </div>
+<div class="modal-body" id="modal-body">
 
-<br />
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="cropArea">
-            <img-crop image="profilePictureCtrl.profileImage"
-                      area-type="square"
-                      result-image="profilePicture.myCroppedImage"
-                      ng-init="profileCtrl.myCroppedImage = ''"
-                      result-image-size="'max'">
-            </img-crop>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="cropArea">
+                <img-crop image="profilePictureCtrl.profileImage"
+                          area-type="square"
+                          result-image="profilePictureCtrl.myCroppedImage"
+                          ng-init="profilePictureCtrl.myCroppedImage = ''"
+                          result-image-size="'max'">
+                </img-crop>
+            </div>
         </div>
     </div>
+
+</div>
+<div class="modal-footer">
+    <label class="btn btn-primary"
+           for="FilePicker">
+        <input type="file"
+               ng-show="false"
+               id="FilePicker"
+               accept="image/*" />
+        Upload
+    </label>
 </div>

@@ -60,7 +60,12 @@
         }
 
         function changeProfilePicture() {
-            console.log($uibModal);
+            var modalInstance = $uibModal.open({
+                templateUrl: 'app/pages/profile-picture/profile-picture.html',
+                controller: 'ProfilePictureController as profilePictureCtrl',
+                size: 'lg',
+                backdrop: 'static'
+            });
         }
     }
 

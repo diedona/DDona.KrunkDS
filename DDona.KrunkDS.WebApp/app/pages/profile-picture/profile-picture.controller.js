@@ -5,12 +5,14 @@
         .controller('ProfilePictureController', ProfilePictureController);
 
     ProfilePictureController.$inject = ['AuthHelper', 'ProfileService', 'NotificationService',
-        '$scope', '$uibModal'];
+        '$scope', '$uibModalInstance'];
 
     function ProfilePictureController(AuthHelper, ProfileService, NotificationService,
-        $scope, $uibModal) {
+        $scope, $uibModalInstance) {
         var vm = this;
         vm.working = false;
+
+        vm.closeModal = closeModal;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -35,6 +37,10 @@
         }
 
         //////////////////////////////////////////////////////////////////////////
+
+        function closeModal() {
+            $uibModalInstance.close(undefined);
+        }
 
     }
 
