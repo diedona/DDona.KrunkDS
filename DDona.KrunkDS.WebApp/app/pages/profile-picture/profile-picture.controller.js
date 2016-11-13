@@ -34,7 +34,18 @@
         }
 
         function acceptCrop() {
-            console.log(vm.Image.myCroppedImage);
+            //making a post/put because of query string limits
+            var obj = { ProfilePictureBase64: vm.Image.myCroppedImage };
+            ProfileService.updateProfilePicture(obj).then(function (d) {
+                if(d === undefined || d.Success == false){
+                    NotificationService.error('Erro', 'Falha ao atualizar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados atualizados com sucesso');
+                    var resultObj = { Success: true, Base64Image: vm.Image.myCroppedImage };
+                    $uibModalInstance.close(resultObj);
+                }
+            })
+
         }
 
     }

@@ -313,5 +313,57 @@ namespace DDona.KrunkDS.Service
 
             return Result;
         }
+
+        public SingleResultViewModel<bool> UpdateProfilePicture(int Id, UserViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                User User = _db.User
+                    .Where(x => x.Id == Id)
+                    .FirstOrDefault();
+
+                if (User == null)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add("Recurso não existente");
+                    return Result;
+                }
+
+                BlobHelper Blob = new BlobHelper();
+
+                // CONVERTION
+                string ProfilePictureBase64 = Model.ProfilePictureBase64.Replace("data:image/png;base64,", string.Empty);
+                byte[] ProfilePicture = Convert.FromBase64String(ProfilePictureBase64);
+
+                // DELETES OLD FILE (if exists)
+                if (!string.IsNullOrEmpty(User.ProfilePicture))
+                {
+                    Blob.DeleteBlob(User.ProfilePicture);
+                }
+
+                // RANDOMNAME
+                string FileName = Id + "_" + Guid.NewGuid().ToString();
+
+                // UPLOADS NEW ONE
+                Blob.UploadBlob(ProfilePicture, FileName);
+
+                // SAVES THE NAME
+                User.ProfilePicture = FileName;
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
+
+            return Result;
+        }
     }
 }

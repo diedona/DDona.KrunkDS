@@ -64,5 +64,11 @@ namespace DDona.KrunkDS.Util.Blob
 
             return this.GetBlob(FileName);
         }
+
+        public void DeleteBlob(string FileName)
+        {
+            CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
+            blockBlob.Delete();
+        }
     }
 }

@@ -63,6 +63,14 @@ namespace DDona.KrunkDS.WebApp.Controllers
             int Id = new ClaimDataManager(User).GetUserId();
             return Ok(_userService.UpdateReceiveNotification(Id, Status));
         }
+
+        [HttpPut]
+        [Route("UpdateProfilePicture")]
+        public IHttpActionResult UpdateProfilePicture(UserViewModel Model)
+        {
+            int Id = new ClaimDataManager(User).GetUserId();
+            return Ok(_userService.UpdateProfilePicture(Id, Model));
+        }
         #endregion
 
         #region DELETE
