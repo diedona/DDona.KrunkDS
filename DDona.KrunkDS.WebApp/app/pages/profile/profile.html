@@ -98,7 +98,24 @@
         <div class="col-sm-4">
 
             <div ng-show="profileCtrl.showUpdateImg == false">
-                <img class="img-responsive img-circle center-block" ng-src="data:image/jpg;base64,{{profileCtrl.profile.ProfilePictureBase64}}" />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img class="img-responsive img-circle center-block" 
+                             ng-src="data:image/jpg;base64,{{profileCtrl.profile.ProfilePictureBase64}}" />
+                    </div>
+                </div>
+                
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <button type="button"
+                                class="btn btn-primary"
+                                ng-click="">
+                            <i class="fa fa-upload"></i> Trocar
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div ng-show="profileCtrl.showUpdateImg">
