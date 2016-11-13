@@ -11,7 +11,6 @@
     <div class="row">
 
         <!--{{profileCtrl.profile}}-->
-
         <!-- NORMAL DATA -->
         <div class="col-sm-8">
             <div class="well">
@@ -97,57 +96,23 @@
         <!-- PHOTO -->
         <div class="col-sm-4">
 
-            <div ng-show="profileCtrl.showUpdateImg == false">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <img class="img-responsive img-circle center-block" 
-                             ng-src="data:image/jpg;base64,{{profileCtrl.profile.ProfilePictureBase64}}" />
-                    </div>
-                </div>
-                
-                <br />
-
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <button type="button"
-                                class="btn btn-primary"
-                                ng-click="">
-                            <i class="fa fa-upload"></i> Trocar
-                        </button>
-                    </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <img class="img-responsive img-circle center-block"
+                         ng-src="data:image/jpg;base64,{{profileCtrl.profile.ProfilePictureBase64}}" />
                 </div>
             </div>
 
-            <div ng-show="profileCtrl.showUpdateImg">
+            <br />
 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <label class="btn btn-primary"
-                               for="FilePicker">
-                            <input type="file"
-                                   ng-show="false"
-                                   id="FilePicker"
-                                   accept="image/*" />
-                            Upload
-                        </label>
-                    </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="button"
+                            class="btn btn-primary"
+                            ng-click="profileCtrl.changeProfilePicture()">
+                        <i class="fa fa-upload"></i> Trocar
+                    </button>
                 </div>
-
-                <br />
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="cropArea">
-                            <img-crop image="profileCtrl.profileImage"
-                                      area-type="square"
-                                      result-image="profileCtrl.profile.myCroppedImage"
-                                      ng-init="profileCtrl.profile.myCroppedImage = ''"
-                                      result-image-size="'max'">
-                            </img-crop>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>

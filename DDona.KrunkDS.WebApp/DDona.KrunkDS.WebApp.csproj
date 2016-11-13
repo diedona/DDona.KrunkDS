@@ -184,6 +184,8 @@
     <Content Include="app\pages\login\login.controller.js" />
     <Content Include="app\pages\login\login.html" />
     <Content Include="app\pages\logout\logout.controller.js" />
+    <Content Include="app\pages\profile-picture\profile-picture.controller.js" />
+    <Content Include="app\pages\profile-picture\profile-picture.html" />
     <Content Include="app\pages\profile\profile.controller.js" />
     <Content Include="app\pages\profile\profile.html" />
     <Content Include="app\pages\role\role.controller.js" />

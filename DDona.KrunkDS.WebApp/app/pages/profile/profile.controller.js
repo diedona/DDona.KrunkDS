@@ -5,16 +5,17 @@
         .controller('ProfileController', ProfileController);
 
     ProfileController.$inject = ['AuthHelper', 'ProfileService', 'NotificationService',
-        '$scope'];
+        '$scope', '$uibModal'];
 
     function ProfileController(AuthHelper, ProfileService, NotificationService,
-        $scope) {
+        $scope, $uibModal) {
         var vm = this;
         vm.working = false;
         vm.profile = {};
         vm.showUpdateImg = false;
 
         vm.changeNotification = changeNotification;
+        vm.changeProfilePicture = changeProfilePicture;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -56,6 +57,10 @@
                     NotificationService.error('Erro', 'Falha ao carregar dados');
                 }
             });
+        }
+
+        function changeProfilePicture() {
+            console.log($uibModal);
         }
     }
 

@@ -1,0 +1,27 @@
+﻿<div class="row">
+    <div class="col-sm-4">
+        <label class="btn btn-primary"
+               for="FilePicker">
+            <input type="file"
+                   ng-show="false"
+                   id="FilePicker"
+                   accept="image/*" />
+            Upload
+        </label>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="cropArea">
+            <img-crop image="profilePictureCtrl.profileImage"
+                      area-type="square"
+                      result-image="profilePicture.myCroppedImage"
+                      ng-init="profileCtrl.myCroppedImage = ''"
+                      result-image-size="'max'">
+            </img-crop>
+        </div>
+    </div>
+</div>
