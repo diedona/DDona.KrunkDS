@@ -215,6 +215,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="img\background\diamond.png" />
     <Content Include="img\background\weather.png" />
+    <Content Include="img\default\avatar.jpg" />
     <Content Include="img\Help.jpg" />
     <Content Include="img\Krunk.jpg" />
     <Content Include="img\loading\squares.gif" />
