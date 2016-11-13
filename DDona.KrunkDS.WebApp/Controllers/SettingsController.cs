@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace DDona.KrunkDS.WebApp.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrador")]
     [RoutePrefix("api/Settings")]
     public class SettingsController : ApiController
     {

@@ -17,6 +17,7 @@
         vm.showDetails = false;
         vm.settings = undefined;
 
+        vm.search = search;
         vm.showDetailsToCreate = showDetailsToCreate;
         vm.showDetailsToEdit = showDetailsToEdit;
         vm.cancel = cancel;
@@ -37,6 +38,10 @@
         }
 
         //////////////////////////////////////////////////////////////////////////
+
+        function search() {
+            vm.dataTable.reloadData();
+        }
 
         function showDetailsToCreate() {
             vm.settings = {};
