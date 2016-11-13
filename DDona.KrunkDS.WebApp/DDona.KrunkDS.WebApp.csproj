@@ -168,6 +168,7 @@
   <ItemGroup>
     <Content Include="app\app.run.js" />
     <Content Include="app\app.settings.js" />
+    <Content Include="app\directives\upload-picture.directive.js" />
     <Content Include="app\directives\valid-date.directive.js" />
     <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\helpers\interceptor-helper.service.js" />
