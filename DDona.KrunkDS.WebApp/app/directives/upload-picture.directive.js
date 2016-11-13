@@ -9,6 +9,9 @@
     function uploadPicture() {
         return {
             restrict: 'A',
+            scope: {
+                image: '=image'
+            },
             link: link
         };
 
@@ -16,13 +19,13 @@
 
         link.$inject = ['scope', 'element', 'attr'];
 
-        function link(scope, element, attr, ctrl) {
+        function link(scope, element, attr) {
             element.bind("change", function (changeEvent) {
                 var file = changeEvent.currentTarget.files[0];
                 var reader = new FileReader();
                 reader.onload = function (evt) {
                     scope.$apply(function () {
-                        console.log(evt.target.result);
+                        scope.image.profileImage = evt.target.result;
                     });
                 };
                 reader.readAsDataURL(file);
