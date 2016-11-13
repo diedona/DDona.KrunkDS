@@ -33,19 +33,6 @@
                 }
             });
 
-            //http://codepen.io/Crackeraki/pen/QjmNVM
-            angular.element(document.querySelector('#FilePicker')).on('change', handleFileSelect);
-        }
-
-        function handleFileSelect(evt) {
-            var file = evt.currentTarget.files[0];
-            var reader = new FileReader();
-            reader.onload = function (evt) {
-                $scope.$apply(function () {
-                    vm.profileImage = evt.target.result;
-                });
-            };
-            reader.readAsDataURL(file);
         }
 
         //////////////////////////////////////////////////////////////////////////
@@ -66,6 +53,15 @@
                 size: 'lg',
                 backdrop: 'static'
             });
+
+            modalInstance.result.then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    return;
+                } else {
+                    var base64 = d.ResultObject.replace('data:image/png;base64,', '');
+                    vm.profile.ProfilePictureBase64 = base64;
+                }
+            })
         }
     }
 

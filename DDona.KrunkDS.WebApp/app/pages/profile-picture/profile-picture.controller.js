@@ -41,7 +41,7 @@
                     NotificationService.error('Erro', 'Falha ao atualizar dados');
                 } else {
                     NotificationService.success('Sucesso', 'Dados atualizados com sucesso');
-                    var resultObj = { Success: true, Base64Image: vm.Image.myCroppedImage };
+                    var resultObj = { Success: true, ResultObject: vm.Image.myCroppedImage };
                     $uibModalInstance.close(resultObj);
                 }
             })
