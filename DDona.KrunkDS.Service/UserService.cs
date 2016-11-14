@@ -152,7 +152,7 @@ namespace DDona.KrunkDS.Service
                     .Where(x => x.Id == Id)
                     .FirstOrDefault();
 
-                if(User == null)
+                if (User == null)
                 {
                     Result.Success = false;
                     Result.Messages.Add("Recurso não existente");
@@ -216,13 +216,13 @@ namespace DDona.KrunkDS.Service
 
             SettingsViewModel DefaultPassword = _settingsService.GetByModuleKey("User", "DefaultPassword").ResultObject;
 
-            if(DefaultPassword == null)
+            if (DefaultPassword == null)
             {
                 Result.Success = false;
                 Result.Messages.Add("Adicione a configuração 'DefaultPassword' ao sistema");
                 return Result;
             }
-                
+
             using (KrunkContext _db = new KrunkContext())
             {
                 User User = new User()
@@ -258,7 +258,7 @@ namespace DDona.KrunkDS.Service
             {
                 User User = _db.User.Where(x => x.Id == Model.Id).FirstOrDefault();
 
-                if(User == null)
+                if (User == null)
                 {
                     Result.Success = false;
                     Result.Messages.Add("Recurso não encontrado");
@@ -361,6 +361,24 @@ namespace DDona.KrunkDS.Service
                     Result.Success = false;
                     Result.Messages.Add(ex.Message);
                 }
+            }
+
+            return Result;
+        }
+
+        public SingleResultViewModel<string> GetUserProfilePicture(int Id)
+        {
+            SingleResultViewModel<string> Result = new SingleResultViewModel<string>();
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                string FilePath = _db.User
+                    .Where(x => x.Id == Id)
+                    .Select(x => x.ProfilePicture)
+                    .FirstOrDefault();
+
+                BlobHelper Blob = new BlobHelper();
+                Result.ResultObject = Convert.ToBase64String(Blob.GetProfilePicture(FilePath));
             }
 
             return Result;

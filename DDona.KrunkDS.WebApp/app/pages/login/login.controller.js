@@ -30,6 +30,8 @@
                 $location.path('/home');
                 //updates auth in main
                 $scope.mainCtrl.authentication = AuthHelper.getAuthentication();
+                //updates pic
+                $scope.mainCtrl.getPhoto();
             }, function (err) {
                 NotificationService.error('Ops...', 'Login inválido');
             });

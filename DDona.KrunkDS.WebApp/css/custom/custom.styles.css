@@ -60,3 +60,11 @@ body {
 .padding-bottom {
     padding-bottom: 15px;
 }
+
+.user-avatar {
+    width: 20px;
+}
+
+user-avatar-giant {
+    width: 200px;
+}

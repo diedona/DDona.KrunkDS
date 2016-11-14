@@ -1,4 +1,5 @@
 ﻿using DDona.KrunkDS.Service;
+using DDona.KrunkDS.ViewModel.Base;
 using DDona.KrunkDS.ViewModel.Base.DataTables;
 using DDona.KrunkDS.ViewModel.User;
 using DDona.KrunkDS.WebApp.Infrastructure;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace DDona.KrunkDS.WebApp.Controllers
@@ -28,6 +30,14 @@ namespace DDona.KrunkDS.WebApp.Controllers
         {
             int Id = new ClaimDataManager(User).GetUserId();
             return Ok(_userService.GetById(Id));
+        }
+
+        [HttpGet]
+        [Route("GetLoggedUserPhoto")]
+        public IHttpActionResult GetLoggedUserPhoto()
+        {
+            int Id = new ClaimDataManager(User).GetUserId();
+            return Ok(_userService.GetUserProfilePicture(Id));
         }
         #endregion
 

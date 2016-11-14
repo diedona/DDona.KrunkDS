@@ -60,6 +60,7 @@
                 } else {
                     var base64 = d.ResultObject.replace('data:image/png;base64,', '');
                     vm.profile.ProfilePictureBase64 = base64;
+                    $scope.mainCtrl.getPhoto();
                 }
             })
         }
