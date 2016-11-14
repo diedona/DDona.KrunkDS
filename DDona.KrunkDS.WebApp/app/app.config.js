@@ -16,11 +16,26 @@
         httpMethodInterceptorProvider.whitelistDomain('http://localhost:49972/');
         httpMethodInterceptorProvider.whitelistDomain('krunkds');
 
+        //initialize get if not there
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.get = {};
+        }
+
+        // Answer edited to include suggestions from comments
+        // because previous version of code introduced browser-related errors
+
+        //disable IE ajax request caching
+        $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+        // extra
+        $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+        $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider
         .state('app', {
             abstract: true,
+            cache: false,
             templateUrl: 'app/layout/layout.html',
             resolve: {
                 isLoggedIn: isLoggedIn
@@ -28,6 +43,7 @@
         })
         .state('login', {
             url: '/login',
+            cache: false,
             templateUrl: 'app/pages/login/login.html',
             controller: 'LoginController as loginCtrl',
             resolve: {
@@ -40,6 +56,7 @@
         })
         .state('app.home', {
             url: '/home',
+            cache: false,
             templateUrl: 'app/pages/home/home.html',
             controller: 'HomeController as homeCtrl',
             resolve: {
@@ -48,6 +65,7 @@
         })
         .state('app.help', {
             url: '/help',
+            cache: false,
             templateUrl: 'app/pages/help/help.html',
             controller: 'HelpController as helpCtrl',
             resolve: {
@@ -56,6 +74,7 @@
         })
         .state('app.usuarios', {
             url: '/usuarios',
+            cache: false,
             templateUrl: 'app/pages/user/user.html',
             controller: 'UserController as userCtrl',
             resolve: {
@@ -64,6 +83,7 @@
         })
         .state('app.copos', {
             url: '/copos',
+            cache: false,
             templateUrl: 'app/pages/cup/cup.html',
             controller: 'CupController as cupCtrl',
             resolve: {
@@ -72,6 +92,7 @@
         })
         .state('app.profile', {
             url: '/profile',
+            cache: false,
             templateUrl: 'app/pages/profile/profile.html',
             controller: 'ProfileController as profileCtrl',
             resolve: {
@@ -80,6 +101,7 @@
         })
         .state('app.settings', {
             url: '/settings',
+            cache: false,
             templateUrl: 'app/pages/settings/settings.html',
             controller: 'SettingsController as settingsCtrl',
             resolve: {
@@ -88,6 +110,7 @@
         })
         .state('app.role', {
             url: '/grupos',
+            cache: false,
             templateUrl: 'app/pages/role/role.html',
             controller: 'RoleController as roleCtrl',
             resolve: {
