@@ -46,13 +46,21 @@ namespace DDona.KrunkDS.Util.Blob
 
         public byte[] GetBlob(string FileName)
         {
-            CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
-            blockBlob.FetchAttributes();
+            try
+            {
+                CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
+                blockBlob.FetchAttributes();
 
-            byte[] bytes = new byte[blockBlob.Properties.Length];
+                byte[] bytes = new byte[blockBlob.Properties.Length];
 
-            blockBlob.DownloadRangeToByteArray(bytes, 0, 0, blockBlob.Properties.Length);
-            return bytes;
+                blockBlob.DownloadRangeToByteArray(bytes, 0, 0, blockBlob.Properties.Length);
+                return bytes;
+            }
+            catch (Exception)
+            {
+                return new byte[] { };
+            }
+            
         }
 
         public byte[] GetProfilePicture(string FileName)
@@ -67,8 +75,12 @@ namespace DDona.KrunkDS.Util.Blob
 
         public void DeleteBlob(string FileName)
         {
-            CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
-            blockBlob.Delete();
+            try
+            {
+                CloudBlockBlob blockBlob = _container.GetBlockBlobReference(FileName);
+                blockBlob.Delete();
+            }
+            catch (Exception) { }
         }
     }
 }
