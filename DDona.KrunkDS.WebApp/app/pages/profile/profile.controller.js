@@ -16,6 +16,7 @@
 
         vm.changeNotification = changeNotification;
         vm.changeProfilePicture = changeProfilePicture;
+        vm.changeEmail = changeEmail;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,15 @@
                     $scope.mainCtrl.getPhoto();
                 }
             })
+        }
+
+        function changeEmail() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'app/pages/change-email/change-email.html',
+                controller: 'ChangeEmailController as changeEmailCtrl',
+                size: 'md',
+                backdrop: 'static'
+            });
         }
     }
 

@@ -28,6 +28,7 @@
                     <div class="col-sm-6 form-group">
                         <label class="control-label">Email:</label>
                         <input type="text"
+                               readonly
                                class="form-control"
                                ng-model="profileCtrl.profile.Email" />
                     </div>
@@ -89,6 +90,35 @@
                     </div>-->
                 </div>
 
+                <hr />
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-user"></i> Ações de usuário
+                    </div>
+                    <div class="panel-body">
+                        
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="bs-component">
+                                    <div class="btn-group btn-group-justified">
+                                        <a href="" 
+                                           ng-click="profileCtrl.changeEmail()"
+                                           class="btn btn-default">
+                                            <i class="fa fa-envelope"></i> Trocar Email
+                                        </a>
+                                        <a href="" 
+                                           class="btn btn-default">
+                                            <i class="fa fa-user-secret"></i> Trocar Senha
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -109,7 +139,7 @@
                     <button type="button"
                             class="btn btn-primary"
                             ng-click="profileCtrl.changeProfilePicture()">
-                        <i class="fa fa-upload"></i> Trocar
+                        <i class="fa fa-upload"></i> Trocar Foto
                     </button>
                 </div>
             </div>

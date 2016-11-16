@@ -173,6 +173,8 @@
     <Content Include="app\helpers\auth-helper.service.js" />
     <Content Include="app\helpers\interceptor-helper.service.js" />
     <Content Include="app\layout\loader.tpl.html" />
+    <Content Include="app\pages\change-email\change-email.controller.js" />
+    <Content Include="app\pages\change-email\change-email.html" />
     <Content Include="app\pages\cup\cup.html" />
     <Content Include="app\pages\cup\cup.controller.js" />
     <Content Include="app\pages\help\help.controller.js" />

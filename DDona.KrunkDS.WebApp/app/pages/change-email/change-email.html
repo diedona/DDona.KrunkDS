@@ -1,0 +1,57 @@
+﻿<div class="modal-header">
+
+    <span class="pull-right">
+        <button type="button"
+                ng-click="changeEmailCtrl.closeModal()"
+                class="btn btn-link">
+            <i class="fa fa-close"></i>
+        </button>
+    </span>
+    <h3 class="modal-title" id="modal-title">Troca segura de Email</h3>
+
+</div>
+<form novalidate angular-validator angular-validator-submit='changeEmailCtrl.submitForm()' name='changeEmailForm'>
+
+    <div class="modal-body" id="modal-body">
+
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label class="control-label">Senha:</label>
+                <input type="password"
+                       name="Password"
+                       ng-required="true"
+                       ng-model="changeEmail.change.Password"
+                       class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 form-group">
+                <label class="control-label">Novo Email:</label>
+                <input type="email"
+                       name="NewEmail"
+                       ng-required="true"
+                       ng-model="changeEmail.change.NewEmail"
+                       class="form-control" />
+            </div>
+            <div class="col-sm-6 form-group">
+                <label class="control-label">Confirme o Email:</label>
+                <input type="email"
+                       name="ConfirmEmail"
+                       ng-required="true"
+                       validator = "changeEmail.change.NewEmail === changeEmail.change.ConfirmEmail"
+                       invalid-message = "'Os emails estão diferentes!'"
+                       ng-model="changeEmail.change.ConfirmEmail"
+                       class="form-control" />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success"
+                type="submit">
+            Salvar
+        </button>
+    </div>
+
+</form>
