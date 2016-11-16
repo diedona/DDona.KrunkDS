@@ -20,7 +20,7 @@
                 <input type="password"
                        name="Password"
                        ng-required="true"
-                       ng-model="changeEmail.change.Password"
+                       ng-model="changeEmailCtrl.change.Password"
                        class="form-control" />
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <input type="email"
                        name="NewEmail"
                        ng-required="true"
-                       ng-model="changeEmail.change.NewEmail"
+                       ng-model="changeEmailCtrl.change.NewEmail"
                        class="form-control" />
             </div>
             <div class="col-sm-6 form-group">
@@ -41,7 +41,7 @@
                        ng-required="true"
                        validator = "changeEmail.change.NewEmail === changeEmail.change.ConfirmEmail"
                        invalid-message = "'Os emails estão diferentes!'"
-                       ng-model="changeEmail.change.ConfirmEmail"
+                       ng-model="changeEmailCtrl.change.ConfirmEmail"
                        class="form-control" />
             </div>
         </div>

@@ -25,6 +25,10 @@
         //////////////////////////////////////////////////////////////////////////
 
         function activate() {
+            getFullProfile();
+        }
+
+        function getFullProfile() {
             vm.working = true;
             ProfileService.getFullProfile().then(function (d) {
                 if (d === undefined || d.Success == false) {
@@ -33,7 +37,6 @@
                     vm.profile = d.ResultObject;
                 }
             });
-
         }
 
         //////////////////////////////////////////////////////////////////////////
@@ -72,6 +75,12 @@
                 controller: 'ChangeEmailController as changeEmailCtrl',
                 size: 'md',
                 backdrop: 'static'
+            });
+
+            modalInstance.result.then(function (d) {
+                if (d === true) {
+                    getFullProfile();
+                }
             });
         }
     }

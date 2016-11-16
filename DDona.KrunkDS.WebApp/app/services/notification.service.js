@@ -19,7 +19,19 @@
         //////////////////////////////////////////////////////////////////////////
 
         function error(title, obj) {
-            SweetAlert.swal(title, obj, "error");
+            var msg = "";
+
+            if (typeof obj === "string") {
+                msg = obj;
+            } else if (obj instanceof Array) {
+                msg = obj.join();
+            } else {
+                msg = "Erro indefinido";
+            }
+
+            msg = msg.substr(0, 100);
+
+            SweetAlert.swal(title, msg, "error");
         }
 
         function success(title, obj) {

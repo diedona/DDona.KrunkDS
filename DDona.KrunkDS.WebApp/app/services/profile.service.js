@@ -11,7 +11,8 @@
             getFullProfile: getFullProfile,
             updateReceiveNotification: updateReceiveNotification,
             updateProfilePicture: updateProfilePicture,
-            getLoggedUserPhoto: getLoggedUserPhoto
+            getLoggedUserPhoto: getLoggedUserPhoto,
+            updateUserEmail: updateUserEmail
         };
 
         return service;
@@ -48,6 +49,15 @@
         function getLoggedUserPhoto() {
             var promise = null;
             promise = $http.get(SettingsHelper.BaseUrl + 'api/User/GetLoggedUserPhoto').then(
+                function (response) { return response.data; },
+                function (err) { console.log(err); return undefined; }
+            )
+            return promise;
+        }
+
+        function updateUserEmail(obj) {
+            var promise = null;
+            promise = $http.put(SettingsHelper.BaseUrl + 'api/User/UpdateUserEmail', obj).then(
                 function (response) { return response.data; },
                 function (err) { console.log(err); return undefined; }
             )

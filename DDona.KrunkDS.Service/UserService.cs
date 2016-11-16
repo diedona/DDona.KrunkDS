@@ -383,5 +383,47 @@ namespace DDona.KrunkDS.Service
 
             return Result;
         }
+
+        public SingleResultViewModel<bool> UpdateUserEmail(ChangeEmailViewModel Model)
+        {
+            SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
+
+            if (!Model.ConfirmEmail.Equals(Model.NewEmail, StringComparison.CurrentCulture))
+            {
+                Result.Success = false;
+                Result.Messages.Add("Emails diferentes!");
+                return Result;
+            }
+
+            var User = this.GetByPassword(Model.UserName, Model.Password);
+            if (!User.Success)
+            {
+                Result.Success = false;
+                Result.Messages.Add("Falha na autenticação");
+                return Result;
+            }
+
+            using (KrunkContext _db = new KrunkContext())
+            {
+                User UserDB = _db.User
+                    .Where(x => x.UserName.Equals(Model.UserName))
+                    .FirstOrDefault();
+
+                UserDB.Email = Model.NewEmail;
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    Result.Success = false;
+                    Result.Messages.Add(ex.Message);
+                }
+            }
+
+
+            return Result;
+        }
     }
 }
