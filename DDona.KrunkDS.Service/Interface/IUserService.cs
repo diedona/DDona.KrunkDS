@@ -17,5 +17,6 @@ namespace DDona.KrunkDS.Service
         SingleResultViewModel<bool> UpdateProfilePicture(int Id, UserViewModel Model);
         SingleResultViewModel<string> GetUserProfilePicture(int Id);
         SingleResultViewModel<bool> UpdateUserEmail(ChangeEmailViewModel Model);
+        SingleResultViewModel<bool> UpdateUserPassword(ChangePasswordViewModel Model);
     }
 }

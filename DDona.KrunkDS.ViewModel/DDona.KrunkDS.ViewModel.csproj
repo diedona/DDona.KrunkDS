@@ -53,6 +53,7 @@
     <Compile Include="Role\RoleViewModel.cs" />
     <Compile Include="Settings\SettingsViewModel.cs" />
     <Compile Include="User\ChangeEmailViewModel.cs" />
+    <Compile Include="User\ChangePasswordViewModel.cs" />
     <Compile Include="User\UserViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,6 +17,7 @@
         vm.changeNotification = changeNotification;
         vm.changeProfilePicture = changeProfilePicture;
         vm.changeEmail = changeEmail;
+        vm.changePassword = changePassword;
 
         //////////////////////////////////////////////////////////////////////////
 
@@ -81,6 +82,15 @@
                 if (d === true) {
                     getFullProfile();
                 }
+            });
+        }
+
+        function changePassword() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'app/pages/change-password/change-password.html',
+                controller: 'ChangePasswordController as changePasswordCtrl',
+                size: 'md',
+                backdrop: 'static'
             });
         }
     }

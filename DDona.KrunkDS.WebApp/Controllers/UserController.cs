@@ -89,6 +89,14 @@ namespace DDona.KrunkDS.WebApp.Controllers
             Model.UserName = new ClaimDataManager(User).GetUserName();
             return Ok(_userService.UpdateUserEmail(Model));
         }
+
+        [HttpPut]
+        [Route("UpdateUserPassword")]
+        public IHttpActionResult UpdateUserPassword(ChangePasswordViewModel Model)
+        {
+            Model.UserName = new ClaimDataManager(User).GetUserName();
+            return Ok(_userService.UpdateUserPassword(Model));
+        }
         #endregion
 
         #region DELETE
