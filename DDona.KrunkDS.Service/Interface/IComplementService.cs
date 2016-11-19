@@ -7,9 +7,9 @@ namespace DDona.KrunkDS.Service
 {
     public interface IComplementService
     {
-        SingleResultViewModel<bool> DeleteCup(int Id);
-        DatatableReturnViewModel<ComplementViewModel> GetCups(DatatableViewModel Model);
-        SingleResultViewModel<bool> SaveCup(ComplementViewModel Model);
-        SingleResultViewModel<bool> UpdateCup(Complement Model);
+        SingleResultViewModel<bool> DeleteComplement(int Id);
+        DatatableReturnViewModel<ComplementViewModel> GetComplements(DatatableViewModel Model);
+        SingleResultViewModel<bool> SaveComplement(ComplementViewModel Model);
+        SingleResultViewModel<bool> UpdateComplement(Complement Model);
     }
 }

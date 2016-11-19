@@ -13,7 +13,7 @@ namespace DDona.KrunkDS.Service
 {
     public class ComplementService : IComplementService
     {
-        public DatatableReturnViewModel<ComplementViewModel> GetCups(DatatableViewModel Model)
+        public DatatableReturnViewModel<ComplementViewModel> GetComplements(DatatableViewModel Model)
         {
             DatatableReturnViewModel<ComplementViewModel> Result = new DatatableReturnViewModel<ComplementViewModel>();
 
@@ -58,7 +58,7 @@ namespace DDona.KrunkDS.Service
             return Result;
         }
 
-        public SingleResultViewModel<bool> SaveCup(ComplementViewModel Model)
+        public SingleResultViewModel<bool> SaveComplement(ComplementViewModel Model)
         {
             SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
 
@@ -86,7 +86,7 @@ namespace DDona.KrunkDS.Service
             return Result;
         }
 
-        public SingleResultViewModel<bool> UpdateCup(Complement Model)
+        public SingleResultViewModel<bool> UpdateComplement(Complement Model)
         {
             SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
 
@@ -121,7 +121,7 @@ namespace DDona.KrunkDS.Service
             return Result;
         }
 
-        public SingleResultViewModel<bool> DeleteCup(int Id)
+        public SingleResultViewModel<bool> DeleteComplement(int Id)
         {
             SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
 

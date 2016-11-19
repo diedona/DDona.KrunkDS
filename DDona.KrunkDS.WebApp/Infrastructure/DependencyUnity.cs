@@ -17,6 +17,7 @@ namespace DDona.KrunkDS.WebApp.Infrastructure
             container.RegisterType<ICupService, CupService>(new HierarchicalLifetimeManager());
             container.RegisterType<ISettingsService, SettingsService>(new HierarchicalLifetimeManager());
             container.RegisterType<IRoleService, RoleService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IComplementService, ComplementService>(new HierarchicalLifetimeManager());
 
             config.DependencyResolver = new UnityResolver(container);
         }

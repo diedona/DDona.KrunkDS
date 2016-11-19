@@ -5,10 +5,10 @@
         .controller('ComplementController', ComplementController);
 
     ComplementController.$inject = ['DTOptionsBuilder', 'DTColumnBuilder', 'SettingsHelper', 'AuthHelper',
-        '$scope', '$compile'];
+        '$scope', '$compile', '$filter'];
     
     function ComplementController(DTOptionsBuilder, DTColumnBuilder, SettingsHelper, AuthHelper,
-        $scope, $compile) {
+        $scope, $compile, $filter) {
         var vm = this;
         vm.working = false;
         vm.tabIndex = 0;
