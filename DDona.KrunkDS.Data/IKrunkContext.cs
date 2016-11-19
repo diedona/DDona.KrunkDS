@@ -15,6 +15,7 @@ namespace DDona.KrunkDS.Data
 
     public interface IKrunkContext : System.IDisposable
     {
+        System.Data.Entity.DbSet<Complement> Complement { get; set; } // Complement
         System.Data.Entity.DbSet<Cup> Cup { get; set; } // Cup
         System.Data.Entity.DbSet<Person> Person { get; set; } // Person
         System.Data.Entity.DbSet<Role> Role { get; set; } // Role

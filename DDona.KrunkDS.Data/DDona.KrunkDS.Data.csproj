@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Complement.cs">
+      <DependentUpon>Database1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComplementConfiguration.cs">
+      <DependentUpon>Database1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cup.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
@@ -99,6 +105,7 @@
     <Compile Include="UserConfiguration.cs">
       <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
+    <Content Include="DB\02_Complement.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

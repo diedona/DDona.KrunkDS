@@ -90,6 +90,15 @@
                 isLoggedIn: isLoggedIn
             }
         })
+        .state('app.acompanhamentos', {
+            url: '/acompanhamentos',
+            cache: false,
+            templateUrl: 'app/pages/complement/complement.html',
+            controller: 'ComplementController as complementCtrl',
+            resolve: {
+                isLoggedIn: isLoggedIn
+            }
+        })
         .state('app.profile', {
             url: '/profile',
             cache: false,

@@ -18,6 +18,7 @@ namespace DDona.KrunkDS.Data
     [System.CodeDom.Compiler.GeneratedCode("EF.Reverse.POCO.Generator", "2.24.0.0")]
     public class FakeKrunkContext : IKrunkContext
     {
+        public System.Data.Entity.DbSet<Complement> Complement { get; set; }
         public System.Data.Entity.DbSet<Cup> Cup { get; set; }
         public System.Data.Entity.DbSet<Person> Person { get; set; }
         public System.Data.Entity.DbSet<Role> Role { get; set; }
@@ -26,6 +27,7 @@ namespace DDona.KrunkDS.Data
 
         public FakeKrunkContext()
         {
+            Complement = new FakeDbSet<Complement>("Id");
             Cup = new FakeDbSet<Cup>("Id");
             Person = new FakeDbSet<Person>("Id");
             Role = new FakeDbSet<Role>("Id");

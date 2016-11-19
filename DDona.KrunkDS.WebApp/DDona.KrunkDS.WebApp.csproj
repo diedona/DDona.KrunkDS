@@ -177,6 +177,8 @@
     <Content Include="app\pages\change-password\change-password.html" />
     <Content Include="app\pages\change-email\change-email.controller.js" />
     <Content Include="app\pages\change-email\change-email.html" />
+    <Content Include="app\pages\complement\complement.controller.js" />
+    <Content Include="app\pages\complement\complement.html" />
     <Content Include="app\pages\cup\cup.html" />
     <Content Include="app\pages\cup\cup.controller.js" />
     <Content Include="app\pages\help\help.controller.js" />
@@ -199,6 +201,7 @@
     <Content Include="app\pages\settings\settings.html" />
     <Content Include="app\pages\user\user.controller.js" />
     <Content Include="app\pages\user\user.html" />
+    <Content Include="app\services\complement.service.js" />
     <Content Include="app\services\role.service.js" />
     <Content Include="app\services\settings.service.js" />
     <Content Include="app\services\cup.service.js" />
