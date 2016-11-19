@@ -14,8 +14,11 @@
         vm.tabIndex = 0;
         vm.showDetails = false;
         vm.dataTable = {};
+        vm.complement = undefined;
 
         vm.search = search;
+        vm.showDetailsToCreate = showDetailsToCreate;
+        vm.cancel = cancel;
 
         vm.dtOptions = dtOptions();
         vm.dtColumns = dtColumns();
@@ -34,6 +37,19 @@
 
         function search() {
             vm.dataTable.reloadData();
+        }
+
+        function showDetailsToCreate() {
+            vm.tabIndex = 1;
+            vm.showDetails = true;
+            vm.complement = {
+                IsActive: true
+            };
+        }
+
+        function cancel() {
+            vm.tabIndex = 0;
+            vm.showDetails = false;
         }
 
         //////////////////////////////////////////////////////////////////////////
