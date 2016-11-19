@@ -86,7 +86,7 @@ namespace DDona.KrunkDS.Service
             return Result;
         }
 
-        public SingleResultViewModel<bool> UpdateComplement(Complement Model)
+        public SingleResultViewModel<bool> UpdateComplement(ComplementViewModel Model)
         {
             SingleResultViewModel<bool> Result = new SingleResultViewModel<bool>();
 

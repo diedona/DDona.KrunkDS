@@ -5,10 +5,10 @@
         .controller('ComplementController', ComplementController);
 
     ComplementController.$inject = ['DTOptionsBuilder', 'DTColumnBuilder', 'SettingsHelper', 'AuthHelper',
-        '$scope', '$compile', '$filter'];
+        '$scope', '$compile', '$filter', 'ComplementService', 'NotificationService'];
     
     function ComplementController(DTOptionsBuilder, DTColumnBuilder, SettingsHelper, AuthHelper,
-        $scope, $compile, $filter) {
+        $scope, $compile, $filter, ComplementService, NotificationService) {
         var vm = this;
         vm.working = false;
         vm.tabIndex = 0;
@@ -19,6 +19,9 @@
         vm.search = search;
         vm.showDetailsToCreate = showDetailsToCreate;
         vm.cancel = cancel;
+        vm.submitForm = submitForm;
+        vm.showDetailsToEdit = showDetailsToEdit;
+        vm.confirmDelete = confirmDelete;
 
         vm.dtOptions = dtOptions();
         vm.dtColumns = dtColumns();
@@ -52,6 +55,64 @@
             vm.showDetails = false;
         }
 
+        function submitForm() {
+            if (vm.complement.Id === undefined) {
+                save();
+            } else {
+                update();
+            }
+        }
+
+        function save() {
+            vm.working = true;
+            ComplementService.saveComplement(vm.complement).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao salvar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados salvos com sucesso');
+                    vm.dataTable.reloadData(function () { }, false);
+                    vm.cancel();
+                }
+            });
+        }
+
+        function update() {
+            vm.working = true;
+            ComplementService.updateComplement(vm.complement).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao atualizar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados atualizados com sucesso');
+                    vm.dataTable.reloadData(function () { }, false);
+                    vm.cancel();
+                }
+            });
+        }
+
+        function showDetailsToEdit(complement) {
+            var copyComplement = JSON.parse(JSON.stringify(complement));
+            vm.complement = copyComplement;
+            vm.tabIndex = 1;
+            vm.showDetails = true;
+        }
+
+        function confirmDelete() {
+            NotificationService.confirmDelete(deleteComplement);
+        }
+
+        function deleteComplement() {
+            vm.working = true;
+            ComplementService.deleteComplement(vm.complement.Id).then(function (d) {
+                if (d === undefined || d.Success == false) {
+                    NotificationService.error('Erro', 'Falha ao deletar dados');
+                } else {
+                    NotificationService.success('Sucesso', 'Dados deletados com sucesso');
+                    vm.dataTable.reloadData(function () { }, false);
+                    vm.cancel();
+                }
+            });
+        }
+
         //////////////////////////////////////////////////////////////////////////
 
         function dtOptions() {
@@ -83,7 +144,7 @@
             $('td', nRow).unbind('click');
             $('td', nRow).bind('click', function () {
                 $scope.$apply(function () {
-                    //vm.showDetailsToEdit(aData);
+                    vm.showDetailsToEdit(aData);
                 });
             });
             return nRow;

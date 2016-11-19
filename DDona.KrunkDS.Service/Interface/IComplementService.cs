@@ -10,6 +10,6 @@ namespace DDona.KrunkDS.Service
         SingleResultViewModel<bool> DeleteComplement(int Id);
         DatatableReturnViewModel<ComplementViewModel> GetComplements(DatatableViewModel Model);
         SingleResultViewModel<bool> SaveComplement(ComplementViewModel Model);
-        SingleResultViewModel<bool> UpdateComplement(Complement Model);
+        SingleResultViewModel<bool> UpdateComplement(ComplementViewModel Model);
     }
 }
