@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplementService.cs" />
     <Compile Include="CupService.cs" />
+    <Compile Include="Interface\IComplementService.cs" />
     <Compile Include="Interface\ICupService.cs" />
     <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Interface\ISettingsService.cs" />

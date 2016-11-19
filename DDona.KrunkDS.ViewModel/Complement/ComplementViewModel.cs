@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDona.KrunkDS.ViewModel.Cup
+namespace DDona.KrunkDS.ViewModel.Complement
 {
-    public class CupViewModel
+    public class ComplementViewModel
     {
         public int Id { get; set; }
         public string Description { get; set; }
